@@ -1,0 +1,112 @@
+.filter{
+    background-color: #1e88e5;
+    width:100%;
+    height: 80px;
+}
+
+.profileproducts{
+
+    background-color: #f7f7f7 ;
+
+.Product{
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+    border: 1px solid #fbfbfb;
+    border :2px solid transparent;
+    transition: border-top .3s ease-in;
+    transition: box-shadow .3s ease-in;
+    
+    &:hover{
+        box-shadow: 0px 0px 17px 3px lightgrey;
+        border-top: 2px solid blue;
+    }
+
+}
+
+
+
+ul{
+    list-style-type: none;
+    border: 1px solid lightgray;
+    padding: 0;
+    li {
+
+        padding: 20px;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        text-align: center
+        
+    }
+
+    li:hover {
+        cursor: pointer;
+        background-color: #1E88E5;
+        color: white;
+    }
+
+
+    .active {
+        background-color: #1E88E5;
+        color: white;
+
+
+    }
+
+}
+
+
+.title{
+    .d-inline{
+        padding: 10px 20px;
+        background-color: #f7f7f7;
+        padding-bottom: 0;
+        border: 1px solid lightgray;
+        border-bottom: 0px;
+    }
+
+
+}
+
+
+i {
+    color: #FBC326;
+}
+
+
+.productSec{
+
+    border-top: 1px solid lightgray;
+    padding-top: 50px !important;
+    background-color: #f7f7f7;
+
+    
+
+    
+    .card-title{
+        color:#1E88E5;
+        padding-bottom: 10px;
+    }
+    
+    .card-title:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .card {
+        padding: 10px;
+    }
+    
+    .card:hover{
+        box-shadow: 0px 0px 9px 3px lightgray;
+        border: 0;
+    }
+    
+    i {
+        color: #fbc326;
+        font-size: 12px;
+    }           
+}
+
+
+}

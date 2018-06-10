@@ -1,0 +1,48 @@
+<router-outlet></router-outlet>
+<!-- Registration Form  -->
+    <div class="register p-5 text-white my-5">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <a href="" class="text-center w-100"><img src="./assets/img/logo.png" alt="logo"></a>
+        </div>
+            <div class="row pt-3">
+                <div class="form-group col-sm-12">
+                    <div class="row">
+                        <span class="col-sm-6 text-right">تسجيل عضو جديد</span>
+                        <hr>                
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 pb-2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label for="exampleInputFname">الاسم الاول</label>
+                            <input type="email" [(ngModel)]="client.FirstName" class="form-control" id="exampleInputFname"
+                            required 
+                      
+                            
+                            aria-describedby="emailHelp">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="exampleInputLname">اسم العائلة</label>
+                            <input type="email" [(ngModel)]="client.LastName" class="form-control" id="exampleInputLname" 
+                             required   
+                            aria-describedby="emailHelp">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 pb-2">
+                    <label for="exampleInputPassword1">كلمة المرور</label>
+                    <input type="password" [(ngModel)]="client.Password" class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="form-group col-sm-12 pb-2">
+                    <label for="exampleInputPassword2">تأكيد كلمة المرور</label>
+                    <input type="password" [(ngModel)]="client.ConfirmPassword" class="form-control" id="exampleInputPassword2" aria-describedby="emailHelp" required>
+                </div>                   
+                <div class="buttons w-100">
+                    <button  (click)="navigate()" class="btn  btn-block text-center">الخطوة التالية</button>
+                </div>     <!--routerLink="/step1"-->   
+            </div>
+            <hr>
+            <a routerLink="../login"> تسجيل الدخول</a>
+    </div>
+
+ 
