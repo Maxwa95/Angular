@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gear</title>
+</head>
+<body>
+  <header>
+       <!-- Start Header Section -->
+    <!-- Toolbar Section -->
+    <section class="toolbar d-flex align-items-center justify-content-center"> 
+        <div class="container-fluid">
+            <div class="socail-links ">
+                <ul class="d-flex align-items-center justify-content-end">
+                    <li class=" pr-3"><a href=""><i class="fa fa-facebook-square"></i></a></li>
+                    <li class=" pr-3"><a href=""><i class="fa fa-twitter-square"></i></a></li>
+                    <li class=" pr-3"><a href=""><i class="fa fa-youtube-square"></i></a></li>
+                    <li class=" pr-3"><a href=""><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NavBar -->
+    <div class="nav-bar">
+        <nav class="d-flex align-items-center">
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-between">
+                    <!--  Logo  -->
+                    <div class="col-2">
+                        <!-- Left Side -->
+                        <div class="logo">
+                            <!-- Logo -->
+                            <a routerLink=""><img src="./assets/img/logo.png" alt="logo"></a>
+                        </div>
+                    </div>
+                    <!--  Search Box For Desktop -->
+                    <div class="col-8">
+                        <!--  Center  --> 
+                        <form action="" class="search-form">
+                            <div class="row position-relative">
+                                <input type="text" name="search" class="form-control w-100 col-sm-11 rounded-0" placeholder="ابحث هنا" (keyup)="sendKey()"  [(ngModel)]="keywords">
+                                <button class="btn btn-primary col-sm-1 rounded-0 text-center"><i class="fa fa-search"></i></button>
+                                <div class="col-sm-12">
+                                    <div class="result position-absolute w-100" *ngIf="keywords?.length > 0">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item" *ngFor="let item of search.productsmatch">
+                                                <a href="/search/{{item}}">
+                                                     {{item}}
+                                                </a> 
+                                            </li>
+                                         </ul>
+                                    </div>
+                                </div>
+                            </div> 
+                        </form>             
+                        <div class="search-login-form  text-left">
+                            <a href="##" (mouseup)="showCart('user-login')">دخول <i class="fa fa-angle-down"></i></a>                            
+                            <i class="pr-3 fa fa-search"></i>
+                        </div>
+                    </div>
+                    <!-- List Side - Login and Cart -->
+                    <div class="col-2 icons d-flex justify-content-end align-items-center">
+                        <!-- Right Side -->
+                        <div class="header_icons w-100">
+                            <!-- Header icons -->
+                            <div class="cart-icon d-flex justify-content-end align-items-center">
+                                <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                                    <button class="btn btn-link pl-2 ml-2" ngbDropdownToggle>دخول <i class="fas fa-angle-down"></i></button>
+                                    <div class="dropdown-menu w-75 animate-form" ngbDropdownMenu>
+                                        <form action="" class="text-center">
+                                            <a  routerLink="login" class="btn btn-primary"> دخول </a>
+                                            <hr>
+                                            <span> لا تمتلك حسابا ؟ </span>
+                                            <a routerLink="register" href=""> تسجيل عضوية جديده </a>
+                                        </form>    
+                                    </div>
+                                </div>   
+
+                                <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                                    <button class="btn btn-link dropdown-toggle" ngbDropdownToggle>
+                                        <img src="./assets/img/icons/icon-header-02.png" >
+                                        <span class="count">{{allCarts.length}}</span>
+                                    </button>
+                                    <div class="dropdown-menu animate" ngbDropdownMenu>
+                                        <div class=" dropdown-item border-bottom" *ngFor="let item of allCarts; let i=index" >
+                                            <div *ngIf="i < 3" class="d-flex">
+                                                <div class="img-cart ml-2">
+                                                    <img src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.product.Imgs[0].ImgUrl}}" alt="" style="width: 80px">
+                                                </div>
+                                                <div class="item">
+                                                    <p>{{item.product.ProductName || " "}} </p>
+                                                    <p class="text-primary">{{item.product.Price || " "}} جنية</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buttons text-center pt-2 d-flex justify-content-around" *ngIf="allCarts?.length > 0">
+                                            <a [routerLink]="['/cart']" href="" class="btn btn-custom btn-custom-gray mx-2">عربة التسوق</a>
+                                            <a href="" class="btn btn-custom btn-custom-gray mx-2">تأكيدالدفع </a>
+                                        </div>
+                                    </div> 
+                                </div>  
+                            </div>
+                        </div>                
+                    </div>
+                    <!-- Burger Button  -->
+                    <div class="col-2 toggle d-flex align-items-center" (click)="burgerButton($event)">
+                            <span class="bars bars-1"></span>
+                            <span class="bars bars-2"></span>
+                            <span class="bars bars-3"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+            <!--
+                ############################## Mobile Navbar #############################
+            -->    
+
+        <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item px-2 active">
+                        <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a routerLink="SpareParts" class="nav-link" href="#">قطع غيار</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a routerLink="shop" class="nav-link">محلات</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link" href="#">نصائح</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a routerLink="aboutUs" class="nav-link" href="#">من نحن</a>
+                    </li> 
+                    <li class="nav-item px-2">
+                        <a  class="nav-link" href="#">اتصل بنا</a>
+                    </li>                 
+                </ul>
+                <div class="socail-links ">
+                    <ul class="d-flex align-items-center justify-content-end">
+                        <li class=" pr-3"><a href=""><i class="fa fa-facebook-square"></i></a></li>
+                        <li class=" pr-3"><a href=""><i class="fa fa-twitter-square"></i></a></li>
+                        <li class=" pr-3"><a href=""><i class="fa fa-youtube-square"></i></a></li>
+                        <li class=" pr-3"><a href=""><i class="fa fa-linkedin-square"></i></a></li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+            <!--
+                ############################## Desktop Navbar #############################
+            -->        
+        <div class="desktop-menu">
+            <!-- List Items -->
+             <ul class="d-flex"> 
+                <li class="nav-item px-2 active">
+                    <a routerLink="" class="nav-link" href="">الرئيسية <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item px-2">
+                    <a routerLink="spareparts" class="nav-link" href="">قطع غيار</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a routerLink="shop" class="nav-link" href="">محلات</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#">إكسسورات</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#">كشف الاعطال</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#">نصائح</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#">من نحن</a>
+                </li> 
+                <li class="nav-item px-2">
+                    <a  class="nav-link" href="#">اتصل بنا</a>
+                </li>                 
+            </ul>
+        </div> 
+  </header><!-- End Header Section-->
+</body>
+</html>
+
+

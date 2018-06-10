@@ -1,0 +1,47 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { cart } from './models/cart';
+@Injectable({
+  providedIn: 'root'
+})
+export class Cart {
+  public carts : cart[] =  JSON.parse(localStorage.getItem('cart')) || [];
+  private bs = new BehaviorSubject(this.carts);
+   cart = this.bs.asObservable();
+  constructor() {
+ //this.carts = JSON.parse(localStorage.getItem('cart'));
+   }
+    addtocart(cart: cart) {
+        if (this.carts.indexOf(cart) == -1) {
+            this.carts.push(cart) 
+        }else{
+            this.carts[this.carts.indexOf(cart)].quantity +=1;
+       }
+       this.bs.next(this.carts)
+       localStorage.setItem("cart",JSON.stringify(this.carts))
+      
+    }
+
+    removefromcart(cart: cart) {
+   
+        if (this.carts.indexOf(cart) != -1) {
+            if (this.carts[this.carts.indexOf(cart)].quantity == 1) {
+             this.carts.splice(this.carts.indexOf(cart),1)   
+            }else
+            this.carts[this.carts.indexOf(cart)].quantity -=1;
+             }
+        this.bs.next(this.carts)
+        localStorage.setItem("cart",JSON.stringify(this.carts))
+    }
+    editcart(cart: cart) {
+       
+        if (this.carts.indexOf(cart) != -1) 
+        {
+            this.carts[this.carts.indexOf(cart)] = cart;
+        }
+        this.bs.next(this.carts)
+        localStorage.setItem("cart",JSON.stringify(this.carts))
+    }
+   
+}
+  

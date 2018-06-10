@@ -1,0 +1,28 @@
+.form{
+        box-shadow: 0px 0px 20px 1px lightgrey;
+        background-color: rgba($color: #fff, $alpha: .90);
+        border-radius: 7px;
+}
+
+
+h2 {
+    color:#1E88E5;
+}
+
+.editProduct {
+    height: 100%;
+    background-color: #fbfbfb
+}
+
+label{
+    color: #343a40;
+}
+
+img {
+    width:200px;
+    height: 200px;
+}
+
+input , textarea , select{
+    background-color: #f7f7f7;
+}
