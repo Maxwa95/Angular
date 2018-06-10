@@ -14,4 +14,8 @@ export class product{
  Rate:number
  Description:Description
  bra:brand
+ BrandId:number
+ Modelid:number
+ CategoryId:number
+ 
 }
