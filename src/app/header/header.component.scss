@@ -59,54 +59,18 @@ header {
     
             // Mobile menu
             .mobile-menu {
-<<<<<<< HEAD
-                background-color: #333333;
-                width: 100%;
-                height: calc(100vh - 125px);
-                position: absolute;
-                
-=======
                 background-color: $white-color;
                 width: 100%;
                 height: calc(100vh - 125px);
                 position: absolute;
                 top: 85px;
->>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
                 z-index: 999;
                 display: none;
                 ul {
                     li {
-<<<<<<< HEAD
-                        background: 0;
-                        margin-bottom: 10px;
-                        padding: 5px;
-                        border-bottom: 1px solid #6c6666;
-                        transition: all .5s;
-                        &:hover{
-                         background-color: #50c1e9;  
-                        }
-                        a{
-                            color: $white-color;
-                            transition: all .5s;
-                            &:hover {
-                                color: #000;
-                            }
-                        }
-                    }
-                }
-                .socail-links {
-                    ul{
-                        li {
-                            transition: all .5s ease-in-out;
-                            &:hover {
-                                background-color: transparent;
-                            }
-                         }
-=======
                         background: $gray-color;
                         margin-bottom: 10px;
                         padding: 5px;
->>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
                     }
                 }
             }

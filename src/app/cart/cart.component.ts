@@ -10,11 +10,6 @@ import { product } from '../models/product';
 export class CartComponent implements OnInit {
   allCarts:cart[] = [];
   allCartsdata:cart[] = [];
-<<<<<<< HEAD
-  public loading = false;
-  
-=======
->>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
   constructor(private cart : Cart) {
        this.cart.cart.subscribe(a=>this.allCarts = a);
      console.log(this.allCarts);
@@ -25,35 +20,6 @@ ngOnInit() {
 
   removeitem(pro : cart)
   {
-<<<<<<< HEAD
-    this.loading = true
-    this.cart.removefromcart(pro);
-    this.cart.cart.subscribe(
-      (a)=> {
-        this.loading = false        
-        this.allCarts = a
-      },
-      (error) => {
-        this.loading = false        
-      }
-    )
-  }
-  edititem(pro : cart){
-    this.loading = true
-    let p = pro;
-    p.quantity +=1;
-    this.cart.removefromcart(pro);
-    this.cart.cart.subscribe(
-      (a)=>{
-        this.loading = false;
-        this.allCarts = a
-      },
-      (error) => {
-        this.loading = false
-      }
-    )
-  }
-=======
     this.cart.removefromcart(pro);
     this.cart.cart.subscribe(a=>this.allCarts = a);
   }
@@ -65,5 +31,4 @@ ngOnInit() {
     this.cart.cart.subscribe(a=>this.allCarts = a);
   }
 
->>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
 }
