@@ -184,10 +184,6 @@
 </div>
 <section class="week-offer container-fluid py-5">
     <div class="row align-items-stretch">
-        <!-- Main Offer ========== Big image  -->
-        <div class="col-12 col-md-6">
-            <img src="../../assets/img/Adv/5.jpg" alt="" class="img-fluid spcial h-100">
-        </div>
         <!--  Sub offer  -->
         <div class="col-md-6 col-12">
             <div class="row">
@@ -219,6 +215,10 @@
                 </div>
             </div>
         </div>
+        <!-- Main Offer ========== Big image  -->
+        <div class="col-12 col-md-6">
+            <img src="../../assets/img/Adv/5.jpg" alt="" class="img-fluid spcial h-100">
+        </div>
     </div>
 </section>
 
@@ -239,7 +239,7 @@
             <div class="col-lg-2 col-sm-4 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of recentProducts; let i = index">
                 <div class="card-group">
                     <div class="card position-relative">
-                        <img class="card-img-top" src="../../assets/img/spare/sp1.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.Imgs[0].ImgUrl}}" alt="Card image cap">
                         <div class="card-body p-0 pt-3 ">
                             <h6 class="card-title text-right">{{item.ProductName}}</h6>
                             <div class="card-text">

@@ -10,11 +10,13 @@ import { cart } from '../models/cart';
   styleUrls: ['./single-product.component.scss']
 })
 export class SingleProductComponent implements OnInit {
-  url :string ;
-  carts = [];
-  singleCart: cart = new cart();
+   url :string ;
+   carts = [];
+   singleCart: cart = new cart();
    getprod:ProductInfo=new ProductInfo();
-     constructor(private http:DataserviceService,private route:ActivatedRoute, private cartHttp:Cart) { 
+   public loading = false;
+   
+  constructor(private http:DataserviceService,private route:ActivatedRoute, private cartHttp:Cart) { 
     this.url = this.route.snapshot.paramMap.get('id'); 
     console.log(this.url);
     
@@ -35,9 +37,11 @@ export class SingleProductComponent implements OnInit {
  
   //  Add To Cart
   addToCart(){
+    this.loading = true;    
     this.singleCart.product = this.getprod.product;
     this.cartHttp.addtocart(this.singleCart);
     setTimeout(()=>{
+      this.loading = false;          
       window.location.replace("../cart")
     },2000)
   }

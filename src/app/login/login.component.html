@@ -25,6 +25,7 @@
                     <input type="checkbox" name="checkbox" id="exampleInputcheck" required>
                 </div>   
                 <div class="buttons w-100">
+                    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
                     <button class="btn btn-custom btn-custom-gray btn-block text-center" (click)="login()" >تسجيل</button>
                 </div>   
             </div>

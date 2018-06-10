@@ -4,14 +4,14 @@ import { product } from '../models/product';
 import{Categoryandbrand} from '../models/cate_brand';
 import { ActivatedRoute } from '@angular/router';
 import { Cart } from "../cart.service";
-// import { NouisliderModule } from 'ng2-nouislider';
+import { NouisliderModule } from 'ng2-nouislider';
 // import { NouiFormatter } from "ng2-nouislider/src/nouislider";                           
 
 
 @Component({
   selector: 'app-spare-parts',
   templateUrl: './spare-parts.component.html',
-  styleUrls: ['./spare-parts.component.scss']
+  styleUrls: ['./spare-parts.component.scss','../../assets/scss/general.scss']
 })
 export class SparePartsComponent implements OnInit {
  pagenumber : number = 1;
@@ -26,6 +26,7 @@ export class SparePartsComponent implements OnInit {
  public someMin: number = 500;
  public someMax: number = 5000;
  public someRange = [500 , 4000];
+ public loading = false;
 
  catesandbrands:Categoryandbrand=new Categoryandbrand();
  currentRate = 3.5;
@@ -72,8 +73,7 @@ export class SparePartsComponent implements OnInit {
   }
 
   keywords(item){
-    // document.getElementsByClassName('spareParts')[0].style.backgroundColor = "black"
-   // document.getElementsByClassName('spareParts')[0].style.backgroundColor = "black"
+    this.loading = true;       
     if(this.catKeywords.indexOf(item) == -1){
       this.catKeywords.push(item)
     }else {
@@ -81,14 +81,17 @@ export class SparePartsComponent implements OnInit {
     }
     this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname).subscribe(
       (a) => {
+         this.loading = false;           
          this.prod =  a.json(); 
-        // document.getElementsByClassName('spareParts')[0].style.backgroundColor = "white"  
-      //  document.getElementsByClassName('spareParts')[0].style.backgroundColor = "white"  
+      },
+      (error) => {
+          this.loading = false;     
       }
     )
   }
 
   keyWordsBrand(item){
+    this.loading = true;   
     if(this.brandsname.indexOf(item) == -1){
       this.brandsname.push(item)
 
@@ -96,7 +99,13 @@ export class SparePartsComponent implements OnInit {
       this.brandsname.splice(this.brandsname.indexOf(item),1)   
     }
     this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname).subscribe(
-      (a) =>  this.prod =  a.json()
+      (a) => {
+        this.loading = false;    
+        this.prod =  a.json()  
+      },
+      (error) => {
+        this.loading = false;    
+      }
     )
   }
 }

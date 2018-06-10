@@ -34,6 +34,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
+import { LoadingModule } from 'ngx-loading';
 
 
 
@@ -113,7 +114,8 @@ const appRoutes = [
     HttpModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    NouisliderModule
+    NouisliderModule,
+    LoadingModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
