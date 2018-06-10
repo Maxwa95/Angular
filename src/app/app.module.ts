@@ -69,7 +69,7 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"GenerateProduct",component: GenerateProductComponent}
+  { path:"generateproduct",component: GenerateProductComponent}
   
 ]
 
