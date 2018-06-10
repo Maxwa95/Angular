@@ -19,6 +19,42 @@
                         <h4 class="pl-3">سعيد نصار</h4>
                         <p> عدد المنتجات <span>(3)</span></p>
                     </div>
+<<<<<<< HEAD
+                    <div class="col-lg-3 col-sm-6 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of recentProducts; let i = index">
+                        <div class="card-group" routerLink="/single/5">
+                            <div class="card position-relative">
+                                <img class="card-img-top" src="../../assets/img/spare/sp1.jpg" alt="Card image cap">
+                                <div class="card-body p-0 pt-3 ">
+                                    <h6 class="card-title text-right">نصار</h6>
+                                    <div class="card-text">
+                                        <div class="row text-right">
+                                            <div class="col-7 text-right">
+                                                <ngb-rating [starTemplate]="t" [rate]="item.Rate" max="5" [readonly]="true" ></ngb-rating>                                    
+                                            </div>
+                                            <div class="col-5"><p>نصار</p></div>
+                                        <!-- <div class="col-12"><p class="text-right">سعيد نصار</p></div> -->
+                                            <div class="col-12 d-flex justify-content-between">
+                                                <div>
+                                                    <p class="m-0 "><bdi>جنية</bdi> 1000 </p>
+                                                    <span class="text-muted old-price"><bdi>جنية</bdi>1500</span> 
+                                                </div>
+                                                <div class="status">
+                                                    <span *ngIf="i < 3">مستعمله</span>
+                                                    <span *ngIf="i > 3">جديدة</span>
+                                                </div>
+                                            </div>
+                                            <div class="descount position-absolute">
+                                                <span> خصم</span>
+                                            </div>
+                                        </div> <!-- row -->
+                                    </div> <!-- card-text -->
+                                </div><!-- card-body -->
+                            </div><!-- card -->
+                        </div> <!-- card-group -->
+                    </div> <!-- one card -->
+                </div>
+            </div> <!-- CLASS cards -->
+=======
                     <div class="col-md-3 col-sm-6 col-12 d-flex align-items-stretch pb-5">
                         <div  class="card p-2" routerLink="/single/5" >
                             <img class="card-img-top" src="../../assets/img/spare/sp9.jpg" alt="Card image cap">
@@ -47,6 +83,7 @@
                     
                 </div>
             </div>
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
         </div>
     </div>
 </section>

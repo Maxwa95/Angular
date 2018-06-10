@@ -1,6 +1,10 @@
 # Gear
 
+<<<<<<< HEAD
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+=======
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
 
 ## Development server
 

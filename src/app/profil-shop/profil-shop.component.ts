@@ -18,7 +18,12 @@ export class ProfilShopComponent implements OnInit {
   {
     this.dataservice.profileCompany(this.companyId).subscribe(
       (a)=>{
+<<<<<<< HEAD
+      this.companyProfile =  a.json();
+      console.log(this.companyProfile);
+=======
       this.companyProfile =  a.json()
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
       } 
       )
       this.dataservice.productsPerCompany(this.companyId).subscribe(

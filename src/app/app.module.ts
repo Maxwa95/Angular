@@ -29,6 +29,12 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
 import { SellerComponent } from './seller/seller.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+<<<<<<< HEAD
+import { CookieService } from 'ngx-cookie-service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NouisliderModule } from 'ng2-nouislider';
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
+=======
 import{AddressesComponent} from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -36,6 +42,7 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 
 
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -56,7 +63,10 @@ const appRoutes = [
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
+<<<<<<< HEAD
+=======
   { path:"search/:name",component: SearchResultComponent},
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
   { path:"cart",component: CartComponent},
   { path:"Seller",component: SellerComponent},
   { path:"EditProduct",component: EditProductComponent},
@@ -67,10 +77,14 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   { path:"shop",component: ShopComponent},
+<<<<<<< HEAD
+  { path:"single-shop",component: SingleShopComponent},
+=======
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
   { path:"GenerateProduct",component: GenerateProductComponent}
   
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
 ]
 
 @NgModule({
@@ -99,21 +113,40 @@ const appRoutes = [
     SellerComponent,
     EditProductComponent,
     SearchResultComponent,
+<<<<<<< HEAD
+=======
     AddressesComponent,
     GenerateProductComponent
 
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
+    HttpModule,
+=======
     HttpModule, 
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     HttpModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+<<<<<<< HEAD
+    NouisliderModule,
+    LoadingModule.forRoot({
+      animationType: ANIMATION_TYPES.circle,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
+      backdropBorderRadius: '4px',
+      primaryColour: '#007bff', 
+      secondaryColour: '#0fe459', 
+      tertiaryColour: '#333333'
+  })
+=======
     NouisliderModule
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

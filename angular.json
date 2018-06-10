@@ -27,14 +27,26 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+              "node_modules/bootstrap-v4-rtl/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/nouislider/distribute/nouislider.min.css",
+               "src/scss/styles.scss",
+               "src/styles.scss"
+=======
               "src/scss/styles.scss",
               "src/styles.scss",
               "node_modules/bootstrap-v4-rtl/dist/css/bootstrap.min.css"
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
             ],
             "scripts": [
               "node_modules/bootstrap-v4-rtl/dist/js/bootstrap.min.js",
               "node_modules/jquery/dist/jquery.min.js"
+<<<<<<< HEAD
+            ]
+=======
               ]
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
           },
           "configurations": {
             "production": {
@@ -113,6 +125,14 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "gear:serve"
+<<<<<<< HEAD
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "gear:serve:production"
+            }
+=======
+>>>>>>> b6ec603b2744e9eec2341ea6ae524c1bf58c29e6
           }
         },
         "lint": {
