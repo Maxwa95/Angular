@@ -17,5 +17,6 @@ export class product{
  BrandId:number
  Modelid:number
  CategoryId:number
- 
-}
+ Manufacturer:string 
+ state:string
+ }
