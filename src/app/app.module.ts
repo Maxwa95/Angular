@@ -28,7 +28,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
 import { SellerComponent } from './seller/seller.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
+import { AddProductComponent } from './add-product/add-product.component';
 import{AddressesComponent} from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -56,10 +56,10 @@ const appRoutes = [
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
-  { path:"search/:name",component: SearchResultComponent},
+  { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   { path:"Seller",component: SellerComponent},
-  { path:"EditProduct",component: EditProductComponent},
+  { path:"Addproduct",component: AddProductComponent},
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"aboutUs",component: AboutUsComponent},
@@ -97,7 +97,7 @@ const appRoutes = [
     SearchResultComponent,
     SingleShopComponent,
     SellerComponent,
-    EditProductComponent,
+    AddProductComponent,
     SearchResultComponent,
     AddressesComponent,
     GenerateProductComponent
