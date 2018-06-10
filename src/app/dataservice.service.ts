@@ -4,6 +4,8 @@ import { Observable, of,BehaviorSubject } from 'rxjs';
 import { Client } from './models/client';
 import { seller } from './models/seller';
 import { login } from './models/login';
+import { ProductInfo } from './models/ProductInfo';
+import { productdesc } from './models/productdesc';
 
 @Injectable({
   providedIn: 'root'
@@ -103,6 +105,27 @@ profileCompany(compid:number){
 productsPerCompany(compid:number){
   return this.http.get('http://gearapi.azurewebsites.net/api/Seller/GetProducts/'+compid);
 }
+GetBrands()
+{
+  return this.http.get('http://gearapi.azurewebsites.net/api/Brands')
+}
+
+GetCategories()
+{
+  return this.http.get('http://gearapi.azurewebsites.net/api/categories')
+}
+GetModels()
+{
+  return this.http.get('http://gearapi.azurewebsites.net/api/models')
+}
+
+AddProduct(pro:productdesc,access_token : string)
+{
+     let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token); 
+  return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
+}
+
 }
 
 
