@@ -150,28 +150,28 @@
 
 
 <!-- Our Client -->
-<div class="title text-center pt-5">
+<!-- <div class="title text-center pt-5">
     <h3 class=""> الماركات المفضلة </h3> 
- </div>
+ </div> -->
 <section class="client py-5">
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-sm-2">
+        <div class="row">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/BMW.png" alt="">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/aud.png" alt="">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/brilliance‎.png" alt="">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/chana.jpg" alt="">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/chevrolet.png" alt="">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-6 pb-3 text-center">
                 <img src="../../assets/img/brand/ford.png" alt="">
             </div>
         </div>
@@ -236,18 +236,18 @@
 <section class="productSec py-5">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 col-sm-4 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of recentProducts; let i = index">
+            <div routerLink="../single/{{item.productId}}" class="col-lg-2 col-sm-4 col-12 mb-5 d-flex align-items-stretch" *ngFor="let item of recentProducts; let i = index">
                 <div class="card-group">
                     <div class="card position-relative">
-                        <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.Imgs[0].ImgUrl}}" alt="Card image cap">
+                        <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item?.Imgs[0].ImgUrl}}" alt="Card image cap">
                         <div class="card-body p-0 pt-3 ">
-                            <h6 class="card-title text-right">{{item.ProductName}}</h6>
+                            <h6 class="card-title text-right">{{item?.ProductName}}</h6>
                             <div class="card-text">
                                 <div class="row text-right">
                                     <div class="col-7 text-right">
                                         <ngb-rating [starTemplate]="t" [rate]="item.Rate" max="5" [readonly]="true" ></ngb-rating>                                    
                                     </div>
-                                    <div class="col-5"><p>({{item.Rate}})</p></div>
+                                    <div class="col-5"><p>({{item?.Rate}})</p></div>
                                 <!-- <div class="col-12"><p class="text-right">سعيد نصار</p></div> -->
                                 <div class="col-12 d-flex justify-content-between">
                                     <div>

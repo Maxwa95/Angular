@@ -71,9 +71,13 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
+<<<<<<< HEAD
   { path:"generateproduct",component: GenerateProductComponent},
   { path:"need-product",component: NeedProductComponent}
 
+=======
+  { path:"generateproduct/:id",component: GenerateProductComponent}
+>>>>>>> b696d1372f468f97c6972cd99f0da6c353fdef66
   
 ]
 

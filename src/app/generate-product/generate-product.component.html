@@ -39,20 +39,19 @@
                   <div class="form-row mb-4">
                     <div class="form-group col-md-12 text-right">
                       <label for="inputEmail4">اسم القطعة</label>
-                      <input type="email" class="form-control text-right">
+                      <input type="text" value="{{products?.product.ProductName }}" class="form-control text-right">
                     </div>
                   </div>
       
                   <div class="form-row mb-4">     
                     <div class="form-group col-md-6 text-right">
                       <label for="inputPassword4">رقم الصنف</label>
-                      <input type="number" class="form-control text-right">
+                      <input type="number" value="{{products?.product.BrandId }}" class="form-control text-right">
                     </div>
                     <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">التصنيف</label>
                         <select id="inputState" class="form-control">
-                          <option selected></option>
-                          <option>...</option>
+                          <option *ngFor="let item of cates" value="{{item.CategoriesId}}"> {{item.CategoriesName}}</option>
                         </select>
                       </div>
                     </div>
@@ -63,15 +62,14 @@
                       <div class="form-group col-md-6  text-right ">
                         <label for="inputState">الموديل</label>
                         <select id="inputState" class="form-control">
-                            <option selected></option>
-                            <option>...</option>
+                          <option value=""></option>
+                          <option *ngFor="let item of models" value="{{item.ModelId}}"> {{item.ModelName}}</option>
                           </select>
                         </div>
                         <div class="form-group col-md-6 text-right">
                           <label for="inputState">الماركة</label>
                           <select id="inputState" class="form-control">
-                            <option selected></option>
-                            <option>...</option>
+                            <option *ngFor="let item of brands" value="{{item.BrandId}}"> {{item.BrandName}}</option>
                           </select>
                         </div>
                       </div>
@@ -79,7 +77,7 @@
                       <div class="form-row mb-4">     
                          <div class="form-group col-md-6 text-right">
                            <label for="inputPassword4">اسم المصنع </label>
-                           <input type="text" class="form-control text-right">
+                           <input type="text" value="{{products?.product.Manufacturer }}" class="form-control text-right">
                          </div>
                          <div class="form-group col-md-6 text-right">
                              <label for="inputAddress">حالة المنتج</label>
@@ -94,11 +92,11 @@
                         <div class="form-row mb-4">     
                            <div class="form-group col-md-6 text-right">
                              <label for="inputPassword4"> تاريخ التصنيع</label>
-                             <input type="date" class="form-control text-right">
+                             <input type="date" value="{{products?.product.DateOfPublish}}"  class="form-control text-right">
                            </div>
                            <div class="form-group col-md-6 text-right">
                                <label for="inputAddress">توافق </label>
-                               <input type="text" name="" id="">
+                               <input type="text" class="form-control" name="" id="">
                            
                             </div>
                           </div>
@@ -113,7 +111,7 @@
                       
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">بلد المنشأ</label>
-                        <input type="text" class="form-control text-right">
+                        <input type="text" value="{{products?.product.PlaceOfOrigin }}" class="form-control text-right">
                       </div> 
                     </div>
       
@@ -121,14 +119,14 @@
           
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress2">الخصم</label>
-                        <input type="number" class="form-control text-right">
+                        <input type="number" value="{{products?.product.Discount }}" class="form-control text-right">
                       </div>
       
                 
       
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">السعر</label>
-                        <input type="number" class="form-control text-right">
+                        <input type="number" value="{{products?.product.Price }}" class="form-control text-right">
                       </div> 
                   </div>
       

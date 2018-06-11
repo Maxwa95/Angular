@@ -59,18 +59,40 @@ header {
     
             // Mobile menu
             .mobile-menu {
-                background-color: $white-color;
+                background-color: #333333;
                 width: 100%;
                 height: calc(100vh - 125px);
                 position: absolute;
-                top: 85px;
+                
                 z-index: 999;
                 display: none;
                 ul {
                     li {
-                        background: $gray-color;
+                        background: 0;
                         margin-bottom: 10px;
                         padding: 5px;
+                        border-bottom: 1px solid #6c6666;
+                        transition: all .5s;
+                        &:hover{
+                         background-color: #50c1e9;  
+                        }
+                        a{
+                            color: $white-color;
+                            transition: all .5s;
+                            &:hover {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+                .socail-links {
+                    ul{
+                        li {
+                            transition: all .5s ease-in-out;
+                            &:hover {
+                                background-color: transparent;
+                            }
+                         }
                     }
                 }
             }

@@ -125,7 +125,12 @@ AddProduct(pro:productdesc,access_token : string)
     headers.append('Authorization','Bearer '+access_token); 
   return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
-
+EditProduct(pro:productdesc,access_token : string)
+{
+     let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token); 
+  return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
+}
 }
 
 
