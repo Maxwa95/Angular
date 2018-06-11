@@ -6,4 +6,25 @@
     background-repeat: no-repeat;
 }
 //----------------------section shop
-.needSpare{}
+.needSpare{
+    direction: rtl;
+    text-align: right;
+    background-image: url(../../assets/img/bgPattern/6.png);
+    background-repeat: repeat;
+    height: 100%;
+    form{
+        box-shadow: 0px 0px 20px 1px lightgrey;
+        background-color: rgba($color: #fff, $alpha: .90);
+        border-radius: 7px;
+        .form-row{
+            .form-group{
+                label{
+                    color: #343a40;  
+                }
+                input , textarea , select{
+                    background-color: #f7f7f7;
+                    }
+            }//form-group
+        }//form-row
+    }//form
+}//needSpare
