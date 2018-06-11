@@ -50,9 +50,8 @@
                     </div>
                     <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">التصنيف</label>
-                        <select id="inputState" class="form-control" [(ngModel)]="prod.product.CategoryId">
-                          <option selected></option>
-                          <option>...</option>
+                        <select  id="inputState" class="form-control" [(ngModel)]="prod.product.CategoryId">
+                          <option *ngFor="let item of cates" value="{{item.CategoriesId}}" >{{item.CategoriesName}}</option>
                         </select>
                       </div>
                     </div>
@@ -64,14 +63,14 @@
                         <label for="inputState">الموديل</label>
                         <select id="inputState" class="form-control" [(ngModel)]="prod.product.Modelid">
                             <option selected></option>
-                            <option>...</option>
+                            <option *ngFor="let item of models" value="{{item.ModelId}}">{{item.ModelName}}</option>
                           </select>
                         </div>
                         <div class="form-group col-md-6 text-right">
                           <label for="inputState">الماركة</label>
                           <select id="inputState" class="form-control" [(ngModel)]="prod.product.BrandId">
                             <option selected></option>
-                            <option>...</option>
+                            <option *ngFor="let item of brands" value="{{item.BrandId}}">{{item.BrandName}}</option>
                           </select>
                         </div>
                       </div>
@@ -98,7 +97,7 @@
                            </div>
                            <div class="form-group col-md-6 text-right">
                                <label for="inputAddress">توافق </label>
-                              <input type="text" [(ngModel)]="prod.Description.ModelFlexibility">
+                              <input type="text" class="form-control" [(ngModel)]="prod.Description.ModelFlexibility">
                             </div>
                           </div>
                       <div class="form-row mb-4 text-right">
@@ -143,7 +142,7 @@
                   </div>
       
                   
-                  <button type="submit" class="btn btn-primary text-center mr-3">حفظ</button>
+                  <button  class="btn btn-primary text-center mr-3" (click)="save()">حفظ</button>
                   <button type="submit" class="btn btn-secondary text-center">رجوع</button>
                 </form>
           </div>
