@@ -3,6 +3,11 @@ section {
     direction: rtl;
     font-family: droid-reg
 }
+.pattern{
+    background-image: url(../../assets/img/bgPattern/4.png);
+    background-repeat: repeat;
+    height: 100%;
+}
 
 .ProductInfo , .featurd{
     p {
