@@ -27,6 +27,7 @@ cookieValue = '';
       
 //access token assign it to what ever
 this.cookieService.set( 'access_token', a.json().access_token);
+//this.cookieService.get("access_token");
  alert("Welcome user");
     },
     error => {
