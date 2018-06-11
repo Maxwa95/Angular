@@ -5,6 +5,7 @@ import {  DataserviceService} from "../dataservice.service";
 import {Category}from '../models/category';
 import {brand}from '../models/brands';
 import {model}from '../models/model';
+import { log } from 'util';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -35,6 +36,10 @@ export class AddProductComponent implements OnInit {
       a=>this.models=a.json(),e=>alert(e),null
     )
 
+  }
+  save():void{
+this.Data.AddProduct(this.prod,this.cookieService.get("access_token"))
+console.log(this.cookieService.get("access_token"))
   }
 
 }
