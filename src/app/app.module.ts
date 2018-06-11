@@ -35,6 +35,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
+import { NeedProductComponent } from './need-product/need-product.component';
 
 
 
@@ -101,7 +102,8 @@ const appRoutes = [
     AddProductComponent,
     SearchResultComponent,
     AddressesComponent,
-    GenerateProductComponent
+    GenerateProductComponent,
+    NeedProductComponent
 
   ],
   imports: [
