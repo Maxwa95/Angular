@@ -14,6 +14,14 @@
     background-repeat: repeat;
     height: 100%;
     div{
+        h4{
+            font-family: droid-reg; 
+        }
+        hr{
+            width: 150px;
+            margin-right: 0;
+            border: 1px solid #50c1e9;
+        }
         .card{
             box-shadow: 0px 0px 20px 1px lightgrey;
             background-color: rgba($color: #fff, $alpha: .90);
