@@ -69,7 +69,7 @@
                             <div class="cart-icon d-flex justify-content-end align-items-center">
                                 <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
                                     <button class="btn btn-link pl-2 ml-2" ngbDropdownToggle>دخول <i class="fas fa-angle-down"></i></button>
-                                    <div class="dropdown-menu w-75 animate-form" ngbDropdownMenu>
+                                    <div class="dropdown-menu animate-form unlogin-form p-2" ngbDropdownMenu>
                                         <form action="" class="text-center">
                                             <a  routerLink="login" class="btn btn-primary"> دخول </a>
                                             <hr>
@@ -78,6 +78,18 @@
                                         </form>    
                                     </div>
                                 </div>   
+
+                                <div *ngIf="1 > 10"  ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                                        <button class="btn btn-link pl-2 ml-2" ngbDropdownToggle>Adel Sadek <i class="fas fa-angle-down"></i></button>
+                                        <div class="dropdown-menu animate-form login-form" ngbDropdownMenu>
+                                            <ul class="p-2">
+                                                <li class="border-bottom py-2"><a class="text-primary" href=""> المشتريات </a></li>
+                                                <li class="border-bottom py-2"><a class="text-primary" href=""> اعدادات الحساب </a></li>
+                                                <li class="border-bottom py-2"><a class="text-primary" href=""> العناوين </a></li>
+                                                <li class="py-2"><a class="text-primary" href=""> خروج </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>  
 
                                 <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
                                     <button class="btn btn-link dropdown-toggle" ngbDropdownToggle>

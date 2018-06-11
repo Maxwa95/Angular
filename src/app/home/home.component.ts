@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from '../dataservice.service'
 import { product } from '../models/product';
-// import { tns } from "path/to/tiny-slider/src/tiny-slider.module"
+// import tinySlider from 'tiny-slider'
+// import { tns } from "tiny-slider/src/tiny-slider.module"
 
 @Component({
   selector: 'app-home',
@@ -16,23 +17,19 @@ export class HomeComponent implements OnInit {
   slider;
   constructor(private dataservice:DataserviceService) {
     this.images = ['../../assets/img/slider1.jpg', '../../assets/img/slider2.jpg']
-    
   }
   
   ngOnInit() {
     this.topSelling();
     this.recent();
     this.bestOffers()
-    this.topSelling()
-
-
-    // this.slider = tns({
-    //   container: '.my-slider',
-    //   items: 3,
-    //   slideBy: 'page',
-    //   autoplay: true
-    // });
-    
+    this.topSelling()    
+      this.slider = tns({
+        container: '#mySlider',
+        items: 3,
+        slideBy: 'page',
+        autoplay: true
+      });
   }
 
 
