@@ -17,7 +17,8 @@ export class SliderComponent implements OnInit {
     // .pipe(map((images: Array<{id: number}>) => this._randomImageUrls(images)))
     // .subscribe(images => this.images = images);
 
-    this.images = ['../../assets/img/slider1.jpg', '../../assets/img/slider2.jpg']
+    this.images = ['../../assets/img/slider/slider1.jpg', '../../assets/img/slider/slider2.jpg',
+    '../../assets/img/slider/slider3.jpg','../../assets/img/slider/slider4.jpg']
 
   }   
   // private _randomImageUrls(images: Array<{id: number}>): Array<string> {
