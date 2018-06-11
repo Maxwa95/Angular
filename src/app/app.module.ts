@@ -70,7 +70,7 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent}
+  { path:"generateproduct/:id",component: GenerateProductComponent}
   
 ]
 

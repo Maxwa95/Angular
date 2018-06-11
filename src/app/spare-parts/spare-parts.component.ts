@@ -27,7 +27,7 @@ export class SparePartsComponent implements OnInit {
  public someMax: number = 5000;
  public someRange = [500 , 4000];
  public loading = false;
-
+  public numbers;
  catesandbrands:Categoryandbrand=new Categoryandbrand();
  currentRate = 3.5;
   constructor(public dataservice : DataserviceService,
@@ -35,7 +35,7 @@ export class SparePartsComponent implements OnInit {
     private cart:Cart
     ) 
   {
-
+    this.numbers = Array(20).fill(2).map((x,i)=>i);
  
     this.url = this.route.snapshot.paramMap.get('name');
     if(this.url != undefined)

@@ -117,7 +117,7 @@
                   </div> 
               </div> -->
   
-              <div class="col-lg-3 col-sm-4 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of prod; let i = index">
+              <div  routerLink="../single/{{item.productId}}" class="col-lg-3 col-sm-4 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of prod; let i = index">
                 <div class="card-group">
                     <div class="card position-relative">
                         <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.Imgs[0].ImgUrl}}" alt="Card image cap">
@@ -161,3 +161,11 @@
             <span class="half" [style.width.%]="fill"><i class="fa fa-star"></i></span><i class="fa fa-star"></i>
           </span>
       </ng-template>
+
+
+
+
+
+      <ul *ngFor="let item of numbers">
+        <li>{{item}}</li>
+      </ul>
