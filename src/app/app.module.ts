@@ -49,7 +49,6 @@ import { TheSellerComponent } from './the-seller/the-seller.component';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
-  
   { path: "register", component: RegisterComponent},
   { path: "SpareParts", component: SparePartsComponent},
   { path: "login", component: LoginComponent},
@@ -125,7 +124,9 @@ const appRoutes = [
     WrongComponent,
     EditProductComponent,
     TheSellerComponent,
-    EditProductComponent
+    EditProductComponent,
+    TheSellerComponent
+
   ],
   imports: [
     BrowserModule,
