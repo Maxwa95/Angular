@@ -27,7 +27,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
-import { SellerComponent } from './seller/seller.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import{AddressesComponent} from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
@@ -44,6 +43,7 @@ import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from './the-seller/the-seller.component';
+
 
 
 
@@ -68,7 +68,6 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-  { path:"theseller",component: SellerComponent},
   { path:"Addproduct",component: AddProductComponent},
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
@@ -85,7 +84,9 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent}
+  { path:"EditProduct",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent}
+  
   
   
 ]
@@ -113,7 +114,6 @@ const appRoutes = [
     ShopComponent,
     SearchResultComponent,
     SingleShopComponent,
-    SellerComponent,
     AddProductComponent,
     SearchResultComponent,
     AddressesComponent,

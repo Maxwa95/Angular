@@ -162,10 +162,8 @@
                     </div>
 
                     <div class="col-12">
-                        <input type="file" name="" id="" multiple>
-                       <!-- <h2>Hello {{name}}</h2> -->
                        <input type="file" multiple (change)="onChange($event, showFileNames)" />
-                      <input #showFileNames />
+                       <input #showFileNames/>
 
                     </div>
                   </div>

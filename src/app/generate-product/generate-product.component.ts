@@ -34,11 +34,11 @@ export class GenerateProductComponent implements OnInit {
   }
 
   
-  // onChange(event: any, input: any) {
-  //   let files = [].slice.call(event.target.files);
+  onChange(event: any, input: any) {
+    let files = [].slice.call(event.target.files);
 
-  //   input.value = files.map(f => f.name).join(', ');
-  // }
+    input.value = files.map(f => f.name).join(', ');
+  }
 
   ngOnInit() {
     this.http.GetCategories().subscribe(
