@@ -14,9 +14,6 @@ cookieValue = '';
 public loading = false;
   constructor(private dataService : DataserviceService,private cookieService : CookieService) 
   {
-    if(!this.cookieService.check("access_token")){
-      window.location.replace("http:www.google.com");
-    }
    console.log(this.cookieService.check("access_token"));
     
   }
