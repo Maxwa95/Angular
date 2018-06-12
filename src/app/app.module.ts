@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes,CanActivate  } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -36,16 +36,23 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
+<<<<<<< HEAD
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthGuardService as AuthGuard } from "./auth-guard.service";
+import { ROUTES } from "./app.routes";
+=======
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from './the-seller/the-seller.component';
 
+>>>>>>> 41c3add708d70ca398b91af4b94cb821691ee0c8
 
 
 const appRoutes = [
   { path: "", component: HomeComponent},
+  
   { path: "register", component: RegisterComponent},
   { path: "SpareParts", component: SparePartsComponent},
   { path: "login", component: LoginComponent},
@@ -65,8 +72,13 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
+<<<<<<< HEAD
+  { path:"Seller",component: SellerComponent},
+  ROUTES,
+=======
   { path:"seller",component: SellerComponent},
   { path:"Addproduct",component: AddProductComponent},
+>>>>>>> 41c3add708d70ca398b91af4b94cb821691ee0c8
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"aboutUs",component: AboutUsComponent},
@@ -116,11 +128,19 @@ const appRoutes = [
     AddressesComponent,
     GenerateProductComponent,
     NeedProductComponent,
+<<<<<<< HEAD
+    
+=======
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
+<<<<<<< HEAD
     EditProductComponent,
     TheSellerComponent
+=======
+    EditProductComponent
+>>>>>>> 41c3add708d70ca398b91af4b94cb821691ee0c8
+>>>>>>> c2e2731c15f77dae59b60f268703842f57bbda5d
 
   ],
   imports: [
