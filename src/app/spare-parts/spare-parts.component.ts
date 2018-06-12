@@ -5,6 +5,7 @@ import{Categoryandbrand} from '../models/cate_brand';
 import { ActivatedRoute } from '@angular/router';
 import { Cart } from "../cart.service";
 import { NouisliderModule } from 'ng2-nouislider';
+import { Router, CanActivate } from '@angular/router';
 // import { NouiFormatter } from "ng2-nouislider/src/nouislider";                           
 
 
@@ -35,6 +36,7 @@ export class SparePartsComponent implements OnInit {
     private cart:Cart
     ) 
   {
+    
     this.numbers = Array(20).fill(2).map((x,i)=>i);
  
     this.url = this.route.snapshot.paramMap.get('name');
