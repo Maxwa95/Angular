@@ -17,6 +17,7 @@ export class AddProductComponent implements OnInit {
   models:model[]=[]
   
   prod:productdesc=new productdesc()
+  
   constructor(private cookieService : CookieService,private Data : DataserviceService) { 
    if (this.cookieService.get("access_token") == null) {
     // force him to  go to login page here
@@ -38,8 +39,8 @@ export class AddProductComponent implements OnInit {
 
   }
   save():void{
-this.Data.AddProduct(this.prod,this.cookieService.get("access_token"))
-console.log(this.cookieService.get("access_token"))
+this.Data.AddProduct(this.prod,this.cookieService.get("access_token")).subscribe(a=>{alert(a)},error=>{alert(error)});
+
   }
 
 }

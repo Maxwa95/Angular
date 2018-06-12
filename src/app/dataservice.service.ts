@@ -118,19 +118,29 @@ GetModels()
 {
   return this.http.get('http://gearapi.azurewebsites.net/api/models')
 }
-
 AddProduct(pro:productdesc,access_token : string)
 {
+  
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token); 
+    headers.append('Content-type','application/json');
   return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
 EditProduct(pro:productdesc,access_token : string)
 {
      let headers = new Headers();
-    headers.append('Authorization','Bearer '+access_token); 
+   headers.append('Authorization','Bearer '+access_token);
+   headers.append('Content-type','application/json');
   return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
+
+Getusergrants(access_token : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  return this.http.get('http://gearapi.azurewebsites.net/api/account/whoami',{headers:headers});
+}
+
 }
 
 
