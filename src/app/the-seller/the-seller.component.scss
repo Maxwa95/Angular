@@ -103,7 +103,8 @@
                 min-width:900px;
                 overflow: auto;
                 background-color: white;
-                thead{
+                thead{ 
+                    border: 1px solid lightgray;
                     tr{
                         th{
                             // border: 1px solid #1e88e5;
@@ -117,7 +118,8 @@
                                     margin: 0;
                                     padding-top: 5px;
                                     padding-bottom: 5px;
-                                    border: 1px solid lightgray
+                                    border: 1px solid lightgray;
+                                    width:10rem;
                                 }
 
 
