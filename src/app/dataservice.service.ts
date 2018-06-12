@@ -63,7 +63,7 @@ searchByKey(key){
   login(data:string){
   //  let headers = new Headers();
   //  headers.append('Content-type','application/x-www-form-urlencoded'); 
-    return this.http.post('http://gearapi.azurewebsites.net/token',data/*,{
+    return this.http.post('http://localhost:2377/token',data/*,{
       headers: headers
     }*/);
   }
@@ -138,7 +138,7 @@ Getusergrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
-  return this.http.get('http://gearapi.azurewebsites.net/api/account/whoami',{headers:headers});
+ return this.http.get('http://localhost:2377/api/whoami',{headers:headers});
 }
 
 }
