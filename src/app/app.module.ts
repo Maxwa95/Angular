@@ -43,6 +43,7 @@ import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AuthService } from './auth.service';
+import { TheSellerComponent } from './the-seller/the-seller.component'
 
 
 const appRoutes = [
@@ -65,11 +66,7 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-//  { path:"Seller",component: SellerComponent},
-  {
-    path: 'Addproduct',
-    component: AddProductComponent,
-},
+  {path: 'Addproduct',component: AddProductComponent},
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
@@ -81,7 +78,9 @@ const appRoutes = [
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
   { path:"EditProduct",component: EditProductComponent},
-  //{ path:"SellerPage",component: TheSellerComponent}
+  { path:"SellerPage",component: TheSellerComponent},
+  { path:"aboutUs",component: AboutUsComponent}
+  
   
   
   
@@ -118,7 +117,8 @@ const appRoutes = [
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
-    EditProductComponent
+    EditProductComponent,
+    TheSellerComponent
 
   ],
   imports: [
