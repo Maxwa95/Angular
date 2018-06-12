@@ -27,6 +27,19 @@
             border: 1px solid #50c1e9;
         }
     }
+    div{
+        .card{
+            box-shadow: 0px 0px 20px 1px lightgrey;
+            background-color: rgba($color: #fff, $alpha: .90);
+            border-radius: 7px;
+            .card-body{
+                p{
+                font-family: droid-reg;
+                line-height: 1.8;
+                }
+            }
+        }
+    }
 }
 select:focus{
     outline: none;
