@@ -1,0 +1,42 @@
+//@import "../../assets/scss/general.scss";
+.bgAdvice{
+    background-image:url("/assets/img/underHeader/bgAdvice.jpg");
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+//----------------------section advice
+.advice{
+    direction: rtl;
+    text-align: right;
+    background-image: url(../../assets/img/bgPattern/6.png);
+    background-repeat: repeat;
+    height: 100%;
+    div{
+        h5{
+            font-family: droid-reg;   
+        }
+        hr{
+            width: 220px;
+            margin-right: 0;
+            border: 1px solid #50c1e9;
+        }
+        .card{
+            box-shadow: 0px 0px 20px 1px lightgrey;
+            background-color: rgba($color: #fff, $alpha: .90);
+            border-radius: 7px;
+            .card-body{
+                p{
+                font-family: droid-reg;
+                line-height: 1.8;
+                }
+            }
+        }
+    }
+    div{
+        img{
+            box-shadow: 0px 0px 20px 1px lightgrey;
+        }
+    }
+}
