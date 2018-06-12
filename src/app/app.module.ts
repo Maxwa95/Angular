@@ -40,6 +40,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { TheSellerComponent } from './the-seller/the-seller.component';
 
 
 
@@ -118,7 +119,8 @@ const appRoutes = [
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
-    EditProductComponent
+    EditProductComponent,
+    TheSellerComponent
 
   ],
   imports: [
