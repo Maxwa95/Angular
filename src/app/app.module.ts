@@ -28,7 +28,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
-import { SellerComponent } from './seller/seller.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import{AddressesComponent} from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
@@ -37,18 +36,29 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
+<<<<<<< HEAD
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService as AuthGuard } from "./auth-guard.service";
+=======
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthGuardService as AuthGuard } from "./auth-guard.service";
+import { ROUTES } from "./app.routes";
+>>>>>>> 4042f759c70b7d86f9cf0644c8b5a6c0b1ca7dd6
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+<<<<<<< HEAD
 import { AuthService } from './auth.service';
+=======
+import { TheSellerComponent } from './the-seller/the-seller.component';
+
+
+>>>>>>> 4042f759c70b7d86f9cf0644c8b5a6c0b1ca7dd6
 
 
 const appRoutes = [
   { path: "", component: HomeComponent},
-  
   { path: "register", component: RegisterComponent},
   { path: "SpareParts", component: SparePartsComponent},
   { path: "login", component: LoginComponent},
@@ -62,17 +72,20 @@ const appRoutes = [
   { path:"profil-shop",component: ProfilShopComponent},
   { path:"single",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
-  { path:"aboutUs",component: AboutUsComponent},
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
+<<<<<<< HEAD
   { path:"Seller",component: SellerComponent},
   {
     path: 'Addproduct',
     component: AddProductComponent,
 },
+=======
+  { path:"Addproduct",component: AddProductComponent},
+>>>>>>> 4042f759c70b7d86f9cf0644c8b5a6c0b1ca7dd6
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
@@ -83,7 +96,9 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent}
+  { path:"EditProduct",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent}
+  
   
   
 ]
@@ -111,7 +126,6 @@ const appRoutes = [
     ShopComponent,
     SearchResultComponent,
     SingleShopComponent,
-    SellerComponent,
     AddProductComponent,
     SearchResultComponent,
     AddressesComponent,
@@ -120,7 +134,14 @@ const appRoutes = [
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
+<<<<<<< HEAD
     EditProductComponent
+=======
+    EditProductComponent,
+    TheSellerComponent,
+    EditProductComponent,
+    TheSellerComponent
+>>>>>>> 4042f759c70b7d86f9cf0644c8b5a6c0b1ca7dd6
 
   ],
   imports: [
