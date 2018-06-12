@@ -62,7 +62,6 @@ const appRoutes = [
   { path:"profil-shop",component: ProfilShopComponent},
   { path:"single",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
-  { path:"aboutUs",component: AboutUsComponent},
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
