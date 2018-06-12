@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   slider;
   constructor(private dataservice:DataserviceService) {
     this.images = ['../../assets/img/slider1.jpg', '../../assets/img/slider2.jpg']
+
+  
   }
   
   ngOnInit() {
@@ -24,15 +26,7 @@ export class HomeComponent implements OnInit {
     this.recent();
     this.bestOffers()
     this.topSelling()    
-      this.slider = tns({
-        container: '#mySlider',
-        items: 3,
-        slideBy: 'page',
-        autoplay: true
-      });
   }
-
-
 
 
 

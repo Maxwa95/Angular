@@ -6,6 +6,8 @@ import { seller } from './models/seller';
 import { login } from './models/login';
 import { ProductInfo } from './models/ProductInfo';
 import { productdesc } from './models/productdesc';
+// import { JwtHelperService } from '@auth0/angular-jwt';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +15,17 @@ import { productdesc } from './models/productdesc';
 
 export class DataserviceService {
 
-  carts = ''
+  carts = '';
 
-  constructor(private http : Http) { }
+  constructor(private http : Http, private cookieService : CookieService) { }
+  
+  // public isAuthenticated(): boolean {
+  //   const token = this.cookieService.check("access_token")
+  //   // Check whether the token is expired and return
+  //   // true or false
+  //   return !this.jwtHelper.isTokenExpired(String(token));
+  // }
+
   // get single prod
   getsingleprod(id:string){
     return this.http.get('http://gearapi.azurewebsites.net/api/singleproduct/'+id)
@@ -118,19 +128,29 @@ GetModels()
 {
   return this.http.get('http://gearapi.azurewebsites.net/api/models')
 }
-
 AddProduct(pro:productdesc,access_token : string)
 {
+  
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token); 
+    headers.append('Content-type','application/json');
   return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
 EditProduct(pro:productdesc,access_token : string)
 {
      let headers = new Headers();
-    headers.append('Authorization','Bearer '+access_token); 
+   headers.append('Authorization','Bearer '+access_token);
+   headers.append('Content-type','application/json');
   return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
+
+Getusergrants(access_token : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  return this.http.get('http://gearapi.azurewebsites.net/api/account/whoami',{headers:headers});
+}
+
 }
 
 

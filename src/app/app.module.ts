@@ -36,7 +36,7 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
-import { FileUploadModule } from "angular-file-uploader";
+// import { AuthGuardService }   from './auth-guard.service';
 
 
 
@@ -72,6 +72,7 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
+  { path:"generateproduct",component: GenerateProductComponent},
   { path:"need-product",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent}
   
@@ -120,7 +121,6 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
-    FileUploadModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

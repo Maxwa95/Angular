@@ -149,7 +149,6 @@ h3 {
 
 
 
-
 .mainSec{
     .container{
         .row{
@@ -317,3 +316,12 @@ h3 {
 
 
 
+
+.gray img{
+    filter:grayscale(1);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.gray img:hover{
+    filter:none;
+}
