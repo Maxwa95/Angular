@@ -29,6 +29,7 @@ public loading = false;
       this.loading = false;
       //access token assign it to what ever
       this.cookieService.set( 'access_token', a.json().access_token);
+      console.log(a.json().access_token)
       alert("Welcome user");
     },
     error => {

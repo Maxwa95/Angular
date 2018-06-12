@@ -7,11 +7,11 @@ export class product{
  productId:number
  ProductName: string
  PlaceOfOrigin:string
- DateOfPublish:string
+ DateOfPublish:Date= new Date(1111)
  Price:number
  Discount:number
  Quantity:number
- Rate:number
+ Rate:number = 0
  Description:Description
  bra:brand
  BrandId:number
@@ -19,4 +19,5 @@ export class product{
  CategoryId:number
  Manufacturer:string 
  state:string
+ CompanyId:number = 2
  }
