@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule, Routes,CanActivate  } from '@angular/router';
+import { RouterModule, Routes  } from '@angular/router';
+import {CanActivate} from "@angular/router";
+import { HttpClientModule,HttpClient } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
@@ -25,7 +28,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
-import { SellerComponent } from './seller/seller.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import{AddressesComponent} from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
@@ -34,20 +36,17 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { AuthGuardService  } from "./auth-guard.service";
-import { route } from "./app.routes";
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { AuthGuardService as AuthGuard } from "./auth-guard.service";
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { HttpClientModule } from '@angular/common/http';
- import { HttpModule } from '@angular/http';
+import { AuthService } from './auth.service';
 
 
 const appRoutes = [
   { path: "", component: HomeComponent},
-  
   { path: "register", component: RegisterComponent},
   { path: "SpareParts", component: SparePartsComponent},
   { path: "login", component: LoginComponent},
@@ -61,21 +60,18 @@ const appRoutes = [
   { path:"profil-shop",component: ProfilShopComponent},
   { path:"single",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
-  { path:"aboutUs",component: AboutUsComponent},
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-  { path:"Seller",component: SellerComponent},
-  route,
+//  { path:"Seller",component: SellerComponent},
+  {
+    path: 'Addproduct',
+    component: AddProductComponent,
+},
   { path:"single/:id",component: SingleProductComponent},
-  { path:"userprofile",component: ProfileComponent},
-  { path:"aboutUs",component: AboutUsComponent},
-  { path:"profile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
-  { path:"cart",component: CartComponent},
-  { path:"shop",component: ShopComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
   { path:"generateproduct",component: GenerateProductComponent},
@@ -84,7 +80,9 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent}
+  { path:"EditProduct",component: EditProductComponent},
+  //{ path:"SellerPage",component: TheSellerComponent}
+  
   
   
 ]
@@ -112,13 +110,11 @@ const appRoutes = [
     ShopComponent,
     SearchResultComponent,
     SingleShopComponent,
-    SellerComponent,
     AddProductComponent,
     SearchResultComponent,
     AddressesComponent,
     GenerateProductComponent,
     NeedProductComponent,
-    
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
@@ -137,7 +133,7 @@ const appRoutes = [
     NouisliderModule,
     LoadingModule,
   ],
-  providers: [CookieService, AuthGuardService],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

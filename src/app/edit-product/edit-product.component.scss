@@ -1,3 +1,16 @@
+.bgEdit{
+    background-image:url("/assets/img/underHeader/bgEdit.jpg");
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.editProduct{
+    background-image: url(../../assets/img/bgPattern/6.png);
+    background-repeat: repeat;
+    height: 100%;
+    font-family: droid-reg;
+}
 .form{
     box-shadow: 0px 0px 20px 1px lightgrey;
     background-color: rgba($color: #fff, $alpha: .90);

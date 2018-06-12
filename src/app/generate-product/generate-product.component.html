@@ -1,3 +1,5 @@
+<section class="bgCreat">
+</section>
 <section class="editProduct">
   <section class="container mb-5">
       <div class="row pt-5">
@@ -157,12 +159,11 @@
                         <img src="/assets/img/file1.jpg" class="img-fluid" alt="">
                     </div>
 
-                    <div class="col-3 mb-3">
-                        <img src="/assets/img/file1.jpg" class="img-fluid" alt="">
-                    </div>
 
-                    <div class="col-12 text-right">
-                        <input type="file" name="" id="" multiple>
+                    <div class="col-12">
+                       <input type="file" multiple (change)="onChange($event, showFileNames)" />
+                       <input #showFileNames/>
+
                     </div>
                   </div>
 
