@@ -39,6 +39,7 @@ import { NeedProductComponent } from './need-product/need-product.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 
@@ -79,7 +80,9 @@ const appRoutes = [
   { path:"generateproduct/:id",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
-  { path:"wrong",component: WrongComponent}
+  { path:"wrong",component: WrongComponent},
+  { path:"EditProduct",component: EditProductComponent}
+  
   
 ]
 
@@ -114,7 +117,8 @@ const appRoutes = [
     NeedProductComponent,
     ContactUsComponent,
     AdviceComponent,
-    WrongComponent
+    WrongComponent,
+    EditProductComponent
 
   ],
   imports: [
