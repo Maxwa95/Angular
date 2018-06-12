@@ -36,6 +36,9 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AdviceComponent } from './advice/advice.component';
+import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 
 
@@ -61,7 +64,7 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-  { path:"Seller",component: SellerComponent},
+  { path:"seller",component: SellerComponent},
   { path:"Addproduct",component: AddProductComponent},
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
@@ -75,6 +78,9 @@ const appRoutes = [
   { path:"generateproduct",component: GenerateProductComponent},
   { path:"need-product",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
+  { path:"contact-us",component: ContactUsComponent},
+  { path:"advice",component: AdviceComponent},
+  { path:"wrong",component: WrongComponent},
   { path:"EditProduct",component: EditProductComponent}
   
   
@@ -109,6 +115,9 @@ const appRoutes = [
     AddressesComponent,
     GenerateProductComponent,
     NeedProductComponent,
+    ContactUsComponent,
+    AdviceComponent,
+    WrongComponent,
     EditProductComponent
 
   ],
