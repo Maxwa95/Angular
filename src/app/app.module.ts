@@ -38,6 +38,7 @@ import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
+import { WrongComponent } from './wrong/wrong.component';
 
 
 
@@ -77,7 +78,8 @@ const appRoutes = [
   { path:"need-product",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
-  { path:"advice",component: AdviceComponent}
+  { path:"advice",component: AdviceComponent},
+  { path:"wrong",component: WrongComponent}
   
 ]
 
@@ -111,7 +113,8 @@ const appRoutes = [
     GenerateProductComponent,
     NeedProductComponent,
     ContactUsComponent,
-    AdviceComponent
+    AdviceComponent,
+    WrongComponent
 
   ],
   imports: [
