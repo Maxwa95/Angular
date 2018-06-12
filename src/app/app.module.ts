@@ -63,7 +63,7 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-  { path:"Seller",component: SellerComponent},
+  { path:"seller",component: SellerComponent},
   { path:"Addproduct",component: AddProductComponent},
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
