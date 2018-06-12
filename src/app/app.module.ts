@@ -123,6 +123,8 @@ const appRoutes = [
     AdviceComponent,
     WrongComponent,
     EditProductComponent,
+    TheSellerComponent,
+    EditProductComponent,
     TheSellerComponent
 
   ],
