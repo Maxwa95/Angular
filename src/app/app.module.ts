@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'; 
-import { HttpModule } from '@angular/http';
+import { RouterModule, Routes,CanActivate  } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
@@ -36,12 +34,20 @@ import { NouisliderModule } from 'ng2-nouislider';
 import { GenerateProductComponent } from './generate-product/generate-product.component';
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
-// import { AuthGuardService }   from './auth-guard.service';
-
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthGuardService  } from "./auth-guard.service";
+import { route } from "./app.routes";
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AdviceComponent } from './advice/advice.component';
+import { WrongComponent } from './wrong/wrong.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { HttpClientModule } from '@angular/common/http';
+ import { HttpModule } from '@angular/http';
 
 
 const appRoutes = [
   { path: "", component: HomeComponent},
+  
   { path: "register", component: RegisterComponent},
   { path: "SpareParts", component: SparePartsComponent},
   { path: "login", component: LoginComponent},
@@ -62,7 +68,7 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   { path:"Seller",component: SellerComponent},
-  { path:"Addproduct",component: AddProductComponent},
+  route,
   { path:"single/:id",component: SingleProductComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"aboutUs",component: AboutUsComponent},
@@ -74,7 +80,12 @@ const appRoutes = [
   { path:"single-shop",component: SingleShopComponent},
   { path:"generateproduct",component: GenerateProductComponent},
   { path:"need-product",component: NeedProductComponent},
-  { path:"generateproduct/:id",component: GenerateProductComponent}
+  { path:"generateproduct/:id",component: GenerateProductComponent},
+  { path:"contact-us",component: ContactUsComponent},
+  { path:"advice",component: AdviceComponent},
+  { path:"wrong",component: WrongComponent},
+  { path:"EditProduct",component: EditProductComponent}
+  
   
 ]
 
@@ -106,7 +117,12 @@ const appRoutes = [
     SearchResultComponent,
     AddressesComponent,
     GenerateProductComponent,
-    NeedProductComponent
+    NeedProductComponent,
+    
+    ContactUsComponent,
+    AdviceComponent,
+    WrongComponent,
+    EditProductComponent
 
   ],
   imports: [
@@ -116,13 +132,12 @@ const appRoutes = [
     HttpModule, 
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    HttpModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

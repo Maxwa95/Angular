@@ -1,5 +1,11 @@
 // @import "../../assets/scss/general.scss";
-
+.bgCart{
+    background-image:url("/assets/img/underHeader/bgCart.jpg");
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .cart{
     direction: rtl;
     text-align: right;
