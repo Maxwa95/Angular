@@ -23,20 +23,28 @@
             border: 1px solid #50c1e9;
         }
         .card{
-            box-shadow: 0px 0px 20px 1px lightgrey;
             background-color: rgba($color: #fff, $alpha: .90);
-            border-radius: 7px;
+            transition:all .3s ease-in-out;
+            box-shadow: 0px 0px 5px 1px lightgrey;
             .card-body{
                 p{
                 font-family: droid-reg;
                 line-height: 1.8;
                 }
             }
+            &:hover{
+                box-shadow: 0px 0px 20px 3px lightgrey;
+            }
         }
     }
     div{
         img{
-            box-shadow: 0px 0px 20px 1px lightgrey;
+            background-color: rgba($color: #fff, $alpha: .90);
+            transition:all .3s ease-in-out;
+            box-shadow: 0px 0px 5px 1px lightgrey;
+            &:hover{
+                box-shadow: 0px 0px 20px 3px lightgrey;
+            }
         }
     }
 }

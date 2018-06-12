@@ -6,6 +6,11 @@
     background-repeat: no-repeat;
 }
 //----------------------section advice
+.bg{
+    box-shadow: 0px 0px 20px 1px lightgrey;
+    background-color: rgba($color: #fff, $alpha: .90);
+    border-radius: 7px;
+}
 .wrong{
     direction: rtl;
     text-align: right;
