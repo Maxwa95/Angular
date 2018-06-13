@@ -37,7 +37,8 @@ import { GenerateProductComponent } from './generate-product/generate-product.co
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
-import { AuthGuardService as AuthGuard } from "./auth-guard.service";
+import { SellerService } from "./SellerService.service";
+import { ClientService } from "./client-service.service";
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
@@ -63,25 +64,32 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
-  { path:"cart",component: CartComponent},
+  { path:"cart",component: CartComponent,
+  canActivate: [ClientService] },
  
   {
     path: 'addproduct',
     component: AddProductComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [SellerService] 
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent},
+  { path:"generateproduct",component: GenerateProductComponent,
+  canActivate: [SellerService] 
+},
   { path:"need-product",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent},
-  { path:"SellerPage",component: TheSellerComponent}
+  { path:"EditProduct",component: EditProductComponent/*,
+canActivate: [SellerService] */},
+  { path:"SellerPage",component: TheSellerComponent
+/*  ,
+  canActivate: [SellerService]*/
+}
   
   
   
@@ -136,7 +144,7 @@ const appRoutes = [
     LoadingModule,
 
   ],
-  providers: [CookieService,AuthGuard],
+  providers: [CookieService,SellerService,ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
