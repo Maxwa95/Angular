@@ -9,15 +9,28 @@
                     <table class="table text-center">
                         <thead>
                             <tr>      
+                                <th scope="col"> تعديل </th>
+                                <th scope="col"> حذف </th>
                                 <th scope="col">عدد القطع</th>        
                                 <th scope="col"> السعر</th>
                                 <th scope="col">الموديل</th>
                                 <th scope="col">الماركة</th>
                                 <th scope="col">اسم القطعة</th>
                                 <th scope="col">صورة المنتج </th>
+                               
                             </tr>
                             <tr>
-                            
+                                <th scope="col">
+                                    <form class="form-inline">
+                                        <input class="  text-right" type="search" placeholder=" " aria-label="Search">
+                                    </form>
+                                </th>
+
+                                <th scope="col">
+                                    <form class="form-inline">
+                                        <input class="  text-right" type="search" placeholder=" " aria-label="Search">
+                                    </form>
+                                </th>
                             <th scope="col">
                                 <form class="form-inline">
                                     <input class="  text-right" type="search" placeholder=" " aria-label="Search">
@@ -60,78 +73,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-            
-                            <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                            <td>40 قطعة</td>
-                            <td>١٢٠٠ جنية</td>
-                            <!-- <td>قطع غيار</td> -->
-                            <td>٢٠١٦</td>
-                            <td>BMW</td>
-                            <td>سير قطع غيار لسكوتر</td>
-                            <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-                            
-                        </tr>
-                        <tr>
-                    
-                            <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                            <td>30 قطعة</td>
-                            <td>١٢٠٠ جنية</td>
-                            <!-- <td>قطع غيار</td> -->
-                            <td>٢٠١٦</td>
-                            <td>BMW</td>
-                            <td>سير قطع غيار لسكوتر</td>
-                            <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-    
-                        </tr>
-                        <tr>
-                    
-                            <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                            <td>30 قطعة</td>
-                            <td>١٢٠٠ جنية</td>
-                            <!-- <td>قطع غيار</td> -->
-                            <td>٢٠١٦</td>
-                            <td>BMW</td>
-                            <td>سير قطع غيار لسكوتر</td>
-                            <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-        
-                        </tr>
-                        <tr>
-                    
-                            <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                            <td>30 قطعة</td>
-                            <td>١٢٠٠ جنية</td>
-                            <!-- <td>قطع غيار</td> -->
-                            <td>٢٠١٦</td>
-                            <td>BMW</td>
-                            <td>سير قطع غيار لسكوتر</td>
-                            <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-    
-                        </tr>
-                        <tr>
-    
-                            <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                            <td>30 قطعة</td>
-                            <td>١٢٠٠ جنية</td>
-                            <!-- <td>قطع غيار</td> -->
-                            <td>٢٠١٦</td>
-                            <td>BMW</td>
-                            <td>سير قطع غيار لسكوتر</td>
-                            <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-        
-                        </tr>
-                                    
-                        <tr>
+                               
+                        <tr *ngFor="let prod of prods">
                     
                                 <!-- <td>٦٤٣٨٧٦٥٣</td> -->
-                                <td>30 قطعة</td>
-                                <td>١٢٠٠ جنية</td>
+                             <td>
+                                <button (click)="edit(prod.Product.productId)">
+                                    تعديل
+                                </button>
+                            </td>
+                                <td>
+                                <button (click)="delete(prod.Product.productId)">
+                                   حذف
+                               </button>
+                            </td>
+                                <td>{{prod.Product.Quantity}} قطعة</td>
+                                <td>{{prod.Product.Price}} جنية</td>
                                 <!-- <td>قطع غيار</td> -->
-                                <td>٢٠١٦</td>
-                                <td>BMW</td>
-                                <td>سير قطع غيار لسكوتر</td>
-                                <td> <img src="/assets/img/brand/aud.png" alt=""></td>
-            
+                                <td>{{prod.Models.ModelFlexibility}}</td>
+                                <td>{{prod.Brands.BrandName}}</td>
+                                <td>{{prod.Product.ProductName}}</td>
+                                <td> <img src="http://gearapi.azurewebsites.net/Content/ProdImages/{{prod.Product.Imgs[0].ImgUrl}}" alt=""></td>
+                                 
                             </tr>
     
                         </tbody>

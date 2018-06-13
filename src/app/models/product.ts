@@ -1,6 +1,7 @@
 import {img} from './image';
 import {Description} from './Description';
 import { brand } from './brands';
+import { model } from './model';
 
 export class product{
  Imgs : img[]
@@ -20,4 +21,6 @@ export class product{
  Manufacturer:string = "" 
  state:string = ""
  CompanyId:number = 2
+ brand : brand = new brand()
+ Model : Description = new Description()
  }

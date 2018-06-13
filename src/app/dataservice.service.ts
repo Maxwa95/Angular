@@ -141,12 +141,29 @@ EditProduct(pro:productdesc,access_token : string)
   return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
 
+DeleteProduct(pro:number,access_token : string)
+{
+     let headers = new Headers();
+   headers.append('Authorization','Bearer '+access_token);
+  return this.http.delete(`http://gearapi.azurewebsites.net/api/seller/product/${pro}`,{headers:headers});
+}
+
 Getusergrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
   return this.http.get('http://gearapi.azurewebsites.net/api/whoami',{headers:headers}).toPromise()
 }
+
+Getproducts(access_token : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  return this.http.get('http://gearapi.azurewebsites.net/api/seller/GetProducts',{headers:headers}).toPromise();
+}
+
+
+
 }
 
 

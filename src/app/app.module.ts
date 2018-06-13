@@ -69,7 +69,7 @@ const appRoutes = [
   // canActivate: [ClientService] },
  
   {
-    path: 'addproduct',
+    path: 'Addproduct',
     component: AddProductComponent,
     canActivate: [SellerService] 
 },
