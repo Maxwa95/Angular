@@ -51,7 +51,7 @@
                       <div class="form-row mb-4">     
                          <div class="form-group col-md-6 text-right">
                            <label for="inputPassword4">اسم المصنع </label>
-                           <input type="text" class="form-control text-right">
+                           <input type="text" class="form-control text-right" value="{{products?.Company[0]?.CompanyName}}">
                          </div>
                          <div class="form-group col-md-6 text-right">
                              <label for="inputAddress">حالة المنتج</label>
@@ -66,22 +66,18 @@
                         <div class="form-row mb-4">     
                            <div class="form-group col-md-6 text-right">
                              <label for="inputPassword4"> تاريخ التصنيع</label>
-                             <input type="number" class="form-control text-right">
+                             <input type="date" class="form-control text-right" value="{{products?.Description[0]?.YearOfProduct | date : 'yyyy-MM-dd'}}">
                            </div>
                            <div class="form-group col-md-6 text-right">
                                <label for="inputAddress">توافق </label>
-                               <select id="inputState" class="form-control">
-                                   <option selected></option>
-                                   <option>جديد</option>
-                                   <option>مستعمل</option>
-                                 </select>
+                               <textarea name="" class="form-control" rows="3" value="{{products?.Description[0]?.ModelFlexibility}}"></textarea> 
                             </div>
                           </div>
                       <div class="form-row mb-4 text-right">
                     
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress2">عدد القطع</label>
-                        <input type="number" class="form-control text-right">
+                        <input type="number" class="form-control text-right" value="{{products?.product.Quantity}}">
                       </div>
                       
                 
@@ -114,7 +110,7 @@
                   <div class="form-group">
                       <div class="form-group 0col-md-12 text-right">
                         <label for="exampleFormControlTextarea1" >الوصف</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{products?.Description[0]?.MoreDetails}}"></textarea>
                       </div>
                   </div>
 
@@ -151,7 +147,7 @@
                   </div> -->
       
                   
-                  <button type="submit" class="btn btn-primary text-center mr-3">حفظ</button>
+                  <button type="submit" class="btn btn-primary text-center mr-3" (click)="open(content)">حفظ</button>
                   <button type="submit" class="btn btn-secondary text-center">رجوع</button>
 
                 </form>
@@ -163,3 +159,21 @@
 
 </section>
 
+
+
+<!--  Popup Edit -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h6 class="modal-title ml-auto">تم تعديل المنتج</h6>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <i class="fa fa-mark"></i>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </ng-template>
+    
+  <hr>

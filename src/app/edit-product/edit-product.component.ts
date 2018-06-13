@@ -6,6 +6,7 @@ import {model}from '../models/model';
 import {productdesc}from '../models/productdesc';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class EditProductComponent implements OnInit {
   products:productdesc=new productdesc()
   // products;
   url = '';
-  constructor(private http:DataserviceService, private cookieService : CookieService, private route:ActivatedRoute) { 
+  constructor(private http:DataserviceService, private cookieService : CookieService, private route:ActivatedRoute, private modalService: NgbModal) { 
     this.url = this.route.snapshot.paramMap.get('id'); 
     this.http.getsingleprod(this.url).subscribe(
       (res) => {
@@ -64,6 +65,14 @@ export class EditProductComponent implements OnInit {
       }
     )
 
+  }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      // this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
 }

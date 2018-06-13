@@ -19,7 +19,7 @@ export class SingleProductComponent implements OnInit {
   constructor(private http:DataserviceService,private route:ActivatedRoute, private cartHttp:Cart) { 
     this.url = this.route.snapshot.paramMap.get('id'); 
     console.log(this.url);
-    
+    window.scrollTo(0, 0)
     this.http.getsingleprod(this.url).subscribe(
       (a)=>{
         this.getprod=a.json()

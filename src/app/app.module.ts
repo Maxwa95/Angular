@@ -44,6 +44,7 @@ import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from "./the-seller/the-seller.component";
+import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -64,8 +65,8 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
-  { path:"cart",component: CartComponent,
-  canActivate: [ClientService] },
+  { path:"cart",component: CartComponent},
+  // canActivate: [ClientService] },
  
   {
     path: 'addproduct',
@@ -84,10 +85,11 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct/:id",component: EditProductComponent,
+  { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
 
-  { path:"SellerPage",component: TheSellerComponent}
+  { path:"sellerPage",component: TheSellerComponent},
+  {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
 
@@ -128,7 +130,8 @@ const appRoutes = [
     AdviceComponent,
     WrongComponent,
     EditProductComponent,
-    TheSellerComponent
+    TheSellerComponent,
+    AccountSettingComponent
 
   ],
   imports: [
