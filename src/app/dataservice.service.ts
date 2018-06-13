@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable, of,BehaviorSubject } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';
 import { Client } from './models/client';
 import { seller } from './models/seller';
 import { login } from './models/login';
@@ -67,7 +68,7 @@ searchByKey(key){
   login(data:string){
   //  let headers = new Headers();
   //  headers.append('Content-type','application/x-www-form-urlencoded'); 
-    return this.http.post('http://localhost:2377/token',data/*,{
+    return this.http.post('http://gearapi.azurewebsites.net/token',data/*,{
       headers: headers
     }*/);
   }
@@ -75,6 +76,7 @@ searchByKey(key){
   
   //  Add To Cart Functions
   setCart(item){
+    this.http.get("/").toPromise()
     this.carts = item
   }
 
@@ -132,6 +134,7 @@ AddProduct(pro:productdesc,access_token : string)
 }
 EditProduct(pro:productdesc,access_token : string)
 {
+  
      let headers = new Headers();
    headers.append('Authorization','Bearer '+access_token);
    headers.append('Content-type','application/json');
@@ -142,9 +145,9 @@ Getusergrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
- return this.http.get('http://localhost:2377/api/whoami',{headers:headers});
+  return this.http.get('http://gearapi.azurewebsites.net/api/whoami',{headers:headers}).toPromise()
+}
 }
 
-}
 
 
