@@ -29,7 +29,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import{AddressesComponent} from'./addresses/addresses.component'
+import{  AddressesComponent } from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NouisliderModule } from 'ng2-nouislider';
@@ -43,7 +43,7 @@ import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AuthService } from './auth.service';
-
+import {TheSellerComponent } from "./the-seller/the-seller.component"
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -65,23 +65,20 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-//  { path:"Seller",component: SellerComponent},
-  {
-    path: 'Addproduct',
+  {path: 'Addproduct',
     component: AddProductComponent,
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent},
   { path:"need-product",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent},
-  //{ path:"SellerPage",component: TheSellerComponent}
+  { path:"editProduct/:id",component: EditProductComponent},
+  { path:"sellerPage",component: TheSellerComponent}
   
   
   
@@ -118,7 +115,8 @@ const appRoutes = [
     ContactUsComponent,
     AdviceComponent,
     WrongComponent,
-    EditProductComponent
+    EditProductComponent,
+    TheSellerComponent
 
   ],
   imports: [

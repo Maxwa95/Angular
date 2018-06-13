@@ -19,12 +19,6 @@ export class DataserviceService {
 
   constructor(private http : Http, private cookieService : CookieService) { }
   
-  // public isAuthenticated(): boolean {
-  //   const token = this.cookieService.check("access_token")
-  //   // Check whether the token is expired and return
-  //   // true or false
-  //   return !this.jwtHelper.isTokenExpired(String(token));
-  // }
 
   // get single prod
   getsingleprod(id:string){

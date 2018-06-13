@@ -13,7 +13,7 @@
                   <div class="form-row mb-4">
                     <div class="form-group col-md-12 text-right">
                       <label for="inputEmail4">اسم القطعة</label>
-                      <input type="email" class="form-control text-right">
+                      <input type="email" class="form-control text-right" value="{{products?.product.ProductName}}">
                     </div>
                   </div>
       
@@ -24,9 +24,8 @@
                     </div>
                     <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">التصنيف</label>
-                        <select id="inputState" class="form-control">
-                          <option selected></option>
-                          <option>...</option>
+                        <select id="inputState" class="form-control" >
+                          <option *ngFor="let item of cates" selected value="{{item.CategoriesId}}">{{item.CategoriesName}}</option>
                         </select>
                       </div>
                     </div>
@@ -36,16 +35,14 @@
                     <div class="form-row mb-5">
                       <div class="form-group col-md-6  text-right ">
                         <label for="inputState">الموديل</label>
-                        <select id="inputState" class="form-control">
-                            <option selected></option>
-                            <option>...</option>
-                          </select>
+                        <select id="inputState" class="form-control" >
+                          <option *ngFor="let item of models" selected value="{{item.ModelId}}">{{item.ModelName}}</option>
+                        </select>
                         </div>
                         <div class="form-group col-md-6 text-right">
                           <label for="inputState">الماركة</label>
-                          <select id="inputState" class="form-control">
-                            <option selected></option>
-                            <option>...</option>
+                          <select id="inputState" class="form-control" >
+                            <option *ngFor="let item of brands" selected value="{{item.BrandId}}">{{item.BrandName}}</option>
                           </select>
                         </div>
                       </div>
@@ -90,7 +87,7 @@
                       
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">بلد المنشأ</label>
-                        <input type="text" class="form-control text-right">
+                        <input type="text" class="form-control text-right" value="{{products?.product.PlaceOfOrigin}}">
                       </div> 
                     </div>
       
@@ -98,14 +95,14 @@
           
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress2">الخصم</label>
-                        <input type="number" class="form-control text-right">
+                        <input type="number" class="form-control text-right" value="{{products?.product.Discount}}">
                       </div>
       
                 
       
                       <div class="form-group col-md-6 text-right">
                         <label for="inputAddress">السعر</label>
-                        <input type="number" class="form-control text-right">
+                        <input type="number" class="form-control text-right" value="{{products?.product.Price}}">
                       </div> 
                   </div>
       

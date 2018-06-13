@@ -13,7 +13,7 @@ export class SingleProductComponent implements OnInit {
    url :string ;
    carts = [];
    singleCart: cart = new cart();
-   getprod:ProductInfo=new ProductInfo();
+   getprod: ProductInfo=new ProductInfo();
    public loading = false;
    
   constructor(private http:DataserviceService,private route:ActivatedRoute, private cartHttp:Cart) { 
