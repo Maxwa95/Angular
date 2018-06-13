@@ -17,8 +17,8 @@ export class EditProductComponent implements OnInit {
   cates:Category[]=[];
   brands:brand[]=[];
   models:model[]=[]
-  prod:productdesc=new productdesc()
-  products;
+  products:productdesc=new productdesc()
+  // products;
   url = '';
   constructor(private http:DataserviceService, private cookieService : CookieService, private route:ActivatedRoute) { 
     this.url = this.route.snapshot.paramMap.get('id'); 
@@ -26,13 +26,13 @@ export class EditProductComponent implements OnInit {
       (res) => {
         this.products = res.json()
         console.log(this.products);
+        console.log(this.products.Description[0].PartNumber);
         
       },
       (error) => {
-
       }
     )
-  }
+  } 
 
   ngOnInit() {
   this.http.GetCategories().subscribe(

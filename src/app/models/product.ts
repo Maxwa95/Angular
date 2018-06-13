@@ -5,8 +5,8 @@ import { brand } from './brands';
 export class product{
  Imgs : img[]
  productId:number
- ProductName: string
- PlaceOfOrigin:string
+ ProductName: string=""
+ PlaceOfOrigin:string = ""
  DateOfPublish:Date= new Date(1111)
  Price:number
  Discount:number
@@ -17,7 +17,7 @@ export class product{
  BrandId:number
  Modelid:number
  CategoryId:number
- Manufacturer:string 
- state:string
+ Manufacturer:string = "" 
+ state:string = ""
  CompanyId:number = 2
  }

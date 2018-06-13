@@ -42,8 +42,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { AuthService } from './auth.service';
-import {TheSellerComponent } from "./the-seller/the-seller.component"
+import { TheSellerComponent } from "./the-seller/the-seller.component";
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -65,20 +64,23 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-  {path: 'Addproduct',
+ 
+  {
+    path: 'addproduct',
     component: AddProductComponent,
+    canActivate: [AuthGuard] 
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
   { path:"need-product",component: NeedProductComponent},
-  { path:"generateproduct/:id",component: GenerateProductComponent},
+  { path:"generateproduct",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"editProduct/:id",component: EditProductComponent},
-  { path:"sellerPage",component: TheSellerComponent}
+  { path:"EditProduct/:id",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent}
   
   
   
@@ -131,7 +133,7 @@ const appRoutes = [
     NouisliderModule,
     LoadingModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
