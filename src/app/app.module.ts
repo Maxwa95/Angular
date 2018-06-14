@@ -45,6 +45,7 @@ import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from "./the-seller/the-seller.component";
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
+import { CustomFormsModule } from 'ng4-validators';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -145,6 +146,8 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
+    FormsModule,
+    CustomFormsModule
   ],
   providers: [CookieService,SellerService,ClientService],
   bootstrap: [AppComponent]

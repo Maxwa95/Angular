@@ -40,4 +40,13 @@ public loading = false;
   )
   }
 
+  // errorHandler(status){
+  //   if(status == true){
+  //     alert("valid")
+  //     this.bool = true
+  //   }else {
+  //     this.bool = false
+  //   }
+    
+  // }
 }
