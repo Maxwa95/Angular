@@ -26,7 +26,7 @@ return true;
     })
     .catch((err) => {
       this.router.navigate(['/login'])
-      return false;
+      return true;
     });
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { DataserviceService } from "../dataservice.service";
 import { productsbycompany } from "../models/productsbycompany";
@@ -33,7 +34,7 @@ a=>{
 }
 
   ngOnInit() {
-
+    console.log(this.products);
   }
 
   edit(prodid : number){

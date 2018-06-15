@@ -36,7 +36,7 @@ export class AddProductComponent implements OnInit {
 
   }
   save():void{
-this.Data.AddProduct(this.prod,this.cookieService.get("access_token")).subscribe(a=>{alert(a)},error=>{alert(error)});
+      this.Data.AddProduct(this.prod,this.cookieService.get("access_token")).subscribe(a=>{alert(a)},error=>{alert(error)});
 
   }
 

@@ -29,7 +29,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import{AddressesComponent} from'./addresses/addresses.component'
+import{  AddressesComponent } from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NouisliderModule } from 'ng2-nouislider';
@@ -44,6 +44,8 @@ import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from "./the-seller/the-seller.component";
+import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
+import { CustomFormsModule } from 'ng4-validators';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -64,11 +66,16 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
+<<<<<<< HEAD
   { path:"cart",component: CartComponent },
+=======
+  { path:"cart",component: CartComponent},
+  // canActivate: [ClientService] },
+>>>>>>> e51a507a023271bcab8a30abbfc7e4e55558e08c
  
 
   {
-    path: 'addproduct',
+    path: 'Addproduct',
     component: AddProductComponent,
     canActivate: [SellerService] 
 },
@@ -79,17 +86,24 @@ const appRoutes = [
   { path:"generateproduct",component: GenerateProductComponent,
   canActivate: [SellerService] 
 },
+<<<<<<< HEAD
   { path:"needproduct",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
+=======
+  { path:"need-product",component: NeedProductComponent},
+  { path:"generateproduct",component: GenerateProductComponent},
+>>>>>>> e51a507a023271bcab8a30abbfc7e4e55558e08c
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-  { path:"EditProduct",component: EditProductComponent/*,
-canActivate: [SellerService] */},
-  { path:"SellerPage",component: TheSellerComponent
+  { path:"editProduct/:id",component: EditProductComponent,
+  canActivate: [SellerService]},
+
+  { path:"sellerPage",component: TheSellerComponent},
+  {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
-}
+
   
   
   
@@ -127,7 +141,8 @@ canActivate: [SellerService] */},
     AdviceComponent,
     WrongComponent,
     EditProductComponent,
-    TheSellerComponent
+    TheSellerComponent,
+    AccountSettingComponent
 
   ],
   imports: [
@@ -137,12 +152,12 @@ canActivate: [SellerService] */},
     HttpModule, 
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    HttpModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
-
+    FormsModule,
+    CustomFormsModule
   ],
   providers: [CookieService,SellerService,ClientService],
   bootstrap: [AppComponent]
