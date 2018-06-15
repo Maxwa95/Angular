@@ -18,13 +18,10 @@ export class ClientService implements CanActivate {
     
   canActivate() : Promise<boolean> {
     
-    return this.data.Getusergrants(this.token)
+    return this.data.Getclientgrants(this.token)
     .then((a) => {
-     if(a.json().Type != "Seller"){
+     if(a.json().Type == "Client"){
 return true;
-     }else{
-      this.router.navigate(['/'])
-return false;
      }
     })
     .catch((err) => {

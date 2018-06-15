@@ -19,9 +19,6 @@ export class AddProductComponent implements OnInit {
   prod:productdesc=new productdesc()
   
   constructor(private cookieService : CookieService,private Data : DataserviceService) { 
-   if (this.cookieService.get("access_token") == null) {
-    // force him to  go to login page here
-   }
 
 
   }

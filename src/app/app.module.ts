@@ -64,9 +64,9 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
-  { path:"cart",component: CartComponent,
-  canActivate: [ClientService] },
+  { path:"cart",component: CartComponent },
  
+
   {
     path: 'addproduct',
     component: AddProductComponent,
@@ -79,7 +79,7 @@ const appRoutes = [
   { path:"generateproduct",component: GenerateProductComponent,
   canActivate: [SellerService] 
 },
-  { path:"need-product",component: NeedProductComponent},
+  { path:"needproduct",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
