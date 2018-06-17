@@ -7,9 +7,12 @@
 }
 //----------------------section advice
 .bg{
-    box-shadow: 0px 0px 20px 1px lightgrey;
     background-color: rgba($color: #fff, $alpha: .90);
-    border-radius: 7px;
+    transition:all .3s ease-in-out;
+    box-shadow: 0px 0px 5px 1px lightgrey;
+    &:hover{
+        box-shadow: 0px 0px 20px 3px lightgrey;
+    }
 }
 .wrong{
     direction: rtl;
@@ -34,9 +37,9 @@
     }
     div{
         .card{
-            box-shadow: 0px 0px 20px 1px lightgrey;
             background-color: rgba($color: #fff, $alpha: .90);
-            border-radius: 7px;
+            transition:all .3s ease-in-out;
+            box-shadow: 0px 0px 5px 1px lightgrey;
             .card-body{
                 p{
                 font-family: droid-reg;
@@ -45,6 +48,9 @@
                         color: #50c1e9;
                     }
                 }
+            }
+            &:hover{
+                box-shadow: 0px 0px 20px 3px lightgrey;
             }
         }
     }
