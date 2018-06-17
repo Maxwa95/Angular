@@ -45,7 +45,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { AuthService } from './auth.service';
 import { TheSellerComponent } from './the-seller/the-seller.component';
 //map
-import { MapModule, MapAPILoader, BingMapAPILoaderConfig, BingMapAPILoader, WindowRef, DocumentRef, MapServiceFactory, BingMapServiceFactory } from "angular-maps";
+//import { MapModule, MapAPILoader, BingMapAPILoaderConfig, BingMapAPILoader, WindowRef, DocumentRef, MapServiceFactory, BingMapServiceFactory } from "angular-maps";
 
 
 const appRoutes = [
@@ -135,26 +135,26 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
-    MapModule.forRoot()
+    //MapModule.forRoot()
 
   ],
   providers: [CookieService,
     //MAP
-  {
-      provide: MapAPILoader, deps: [], useFactory: MapServiceProviderFactory
-  }
+  // {
+  //     provide: MapAPILoader, deps: [], useFactory: MapServiceProviderFactory
+  // }
 ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
  //map
-export function MapServiceProviderFactory(){
-  let bc: BingMapAPILoaderConfig = new BingMapAPILoaderConfig();
-  bc.apiKey ="..."; // your bing map key
-  bc.branch = "experimental"; 
-      // to use the experimental bing brach. There are some bug fixes for
-      // clustering in that branch you will need if you want to use 
-      // clustering.
-  return new BingMapAPILoader(bc, new WindowRef(), new DocumentRef());
-}
+// export function MapServiceProviderFactory(){
+//   let bc: BingMapAPILoaderConfig = new BingMapAPILoaderConfig();
+//   bc.apiKey ="..."; // your bing map key
+//   bc.branch = "experimental"; 
+//       // to use the experimental bing brach. There are some bug fixes for
+//       // clustering in that branch you will need if you want to use 
+//       // clustering.
+//   return new BingMapAPILoader(bc, new WindowRef(), new DocumentRef());
+// }
