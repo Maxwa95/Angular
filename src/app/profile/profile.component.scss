@@ -1,15 +1,12 @@
 .filter{
-<<<<<<< HEAD
     background-color: #50c1e9;
     width:100%;
     height: 80px;
-=======
     background-image:url("/assets/img/underHeader/bgProfile.jpg");
     height: 200px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
->>>>>>> a2ae8488cf98bc91d87ddea217e4664ee3b3dc3a
 }
  
 .profileproducts{
@@ -17,10 +14,7 @@
     background-image: url(../../assets/img/bgPattern/6.png);
     background-repeat: repeat;
     height: 100%;
-<<<<<<< HEAD
     font-family: droid-reg;
-=======
->>>>>>> a2ae8488cf98bc91d87ddea217e4664ee3b3dc3a
 
 .Product{
     margin-bottom: 30px;
@@ -32,15 +26,12 @@
 
     
     &:hover{
-<<<<<<< HEAD
         box-shadow: 0px 0px 20px 3px lightgrey;
         border :2px solid transparent;
         border-top: 2px solid #50c1e9
         ;
-=======
         box-shadow: 0px 0px 17px 3px lightgrey;
         border-top: 2px solid #1e88e5;
->>>>>>> a2ae8488cf98bc91d87ddea217e4664ee3b3dc3a
     }
 
 }
