@@ -74,20 +74,20 @@
         }
         div{
             .buttonAdd{
-                background-color: #1e88e5;
+                background-color: #50c1e9;
                 color: white;
                 border-radius: 5px;
-                border: 1px solid #1e88e5;
+                border: 1px solid #50c1e9;
                 padding: 7px 15px ;
             }
         }
         div{
             .edit{
-                border: 1px solid #1e88e5;
-                background-color: #1e88e5;
+                border: 1px solid #50c1e9;
+                background-color: #50c1e9;
                 color: white;
                 border-radius: 5px;
-                border: 1px solid #1e88e5;
+                border: 1px solid #50c1e9;
                 padding: 7px 15px ;
             }
             .remove{
@@ -148,8 +148,8 @@
     li {
 
         padding: 20px;
-        border-top: 1px solid lightgray;
-        border-bottom: 1px solid lightgray;
+        //border-top: 1px solid lightgray;
+       // border-bottom: 1px solid lightgray;
         text-align: center;
         background-color: white;
         
@@ -157,13 +157,13 @@
 
     li:hover {
         cursor: pointer;
-        background-color: #1E88E5;
+        background-color: #47b0d6;
         color: white;
     }
 
 
     .active {
-        background-color: #1E88E5;
+        background-color: #50c1e9;
         color: white;
 
 

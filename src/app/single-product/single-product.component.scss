@@ -34,7 +34,7 @@ section {
     background-color: #f7f7f7;
 }
 .borderBottom {
-    border-bottom: 3px solid #1e88e5;
+    border-bottom: 3px solid #50c1e9;
 }
 
 
@@ -56,4 +56,17 @@ i {
 
 .price {
     font-size: 1.3rem
+}
+.btn-primary {
+    background-color: #50c1e9;
+    border: none;
+}
+.x{
+    width: 80px;
+    margin-right: 0;
+    background-color:  #50c1e9;
+    height: 1px;
+}
+.text-primary{
+    color: #50c1e9!important;
 }

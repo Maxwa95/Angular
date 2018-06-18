@@ -4,24 +4,27 @@
     
     direction: rtl;
     text-align: right;
-    ul{
+    .x{
         list-style-type: none;
+        border: 1px solid lightgray;
         padding: 0;
+        background-color: white;
+        border: none;
         li {
             padding: 10px;
-            text-align: center
+            text-align: center;
             
         }
 
         li:hover {
             cursor: pointer;
-            background-color: #1E88E5;
+            background-color: #47b0d6;
             color: white;
         }
 
 
         .active {
-            background-color: #1E88E5;
+            background-color: #50c1e9;
             color: white;
 
 
