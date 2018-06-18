@@ -43,16 +43,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-<<<<<<< HEAD
-import { AuthService } from './auth.service';
+//import { AuthService } from './auth.service';
 import { TheSellerComponent } from './the-seller/the-seller.component';
-
-
-=======
-import { TheSellerComponent } from "./the-seller/the-seller.component";
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -74,9 +68,7 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
-<<<<<<< HEAD
   {path: 'Addproduct',component: AddProductComponent},
-=======
   // canActivate: [ClientService] },
  
 
@@ -85,7 +77,6 @@ const appRoutes = [
     component: AddProductComponent,
     canActivate: [SellerService] 
 },
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
@@ -100,21 +91,16 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
-<<<<<<< HEAD
   { path:"EditProduct",component: EditProductComponent},
   { path:"SellerPage",component: TheSellerComponent},
-  { path:"aboutUs",component: AboutUsComponent}
-  
-=======
+  { path:"aboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
-
   { path:"sellerPage",component: TheSellerComponent},
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
 
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
   
   
   
@@ -152,12 +138,8 @@ const appRoutes = [
     AdviceComponent,
     WrongComponent,
     EditProductComponent,
-<<<<<<< HEAD
-    TheSellerComponent
-=======
     TheSellerComponent,
     AccountSettingComponent
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
 
   ],
   imports: [
@@ -171,12 +153,9 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
-<<<<<<< HEAD
     
-=======
     FormsModule,
     CustomFormsModule
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
   ],
   providers: [CookieService,SellerService,ClientService],
   bootstrap: [AppComponent]
