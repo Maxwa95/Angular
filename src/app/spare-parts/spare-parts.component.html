@@ -47,13 +47,14 @@
                     </div>
   
                     <div class="row ">
-                        <div class="col-2"><input type="checkbox" class="" id="exampleCheck1" [(ngModel)]="state"></div>
-                        <div  class="col-8" ><label for="exampleCheck1 mr-5"  > جديد</label></div>  
+                        <div class="col-2"><input type="checkbox" class="" id="exampleCheck1" (change)="cstate()" [(ngModel)]="statenew"></div>
+                        <div  class="col-8" ><label for="exampleCheck1 mr-5">جديد</label></div>  
                     </div> 
+                   
   
                     <div class="row ">
-                        <div class="col-2"><input type="checkbox" class="" id="exampleCheck1" [(ngModel)]="state"></div>
-                        <div  class="col-8" ><label for="exampleCheck1 mr-5"> مستعمل</label></div>  
+                        <div class="col-2"><input type="checkbox" class="" id="exampleCheck1" (change)="cstate()" [(ngModel)]="stateused"></div>
+                        <div  class="col-8" ><label for="exampleCheck1 mr-5">مستعمل</label></div>  
                     </div> 
                   </div>
   
@@ -66,23 +67,16 @@
     
                       <div class="row ">
                         <div class="col-6" >
-                            <input type="text" class="form-control"  [(ngModel)]="someRange[1]">
+                            <input type="number" class="form-control"  [(ngModel)]="someMin" (change)="onChange()">
                           </div>  
                           
                           <div  class="col-6" >
-                            <input type="text" class="form-control"  [(ngModel)]="someRange[0]">
+                            <input type="number" class="form-control"  [(ngModel)]="someMax" (change)="onChange()" >
                           </div>  
-                          <div class="col-12">
-                            <nouislider [connect]="true" [min]="someMin" [max]="someMax" [step]="1"  [(ngModel)]="someRange" (ngModelChange)="onChange($event)"></nouislider>
-                          </div>
+                        
                       </div>         
                     </div>
      
-    
-    
-                    <div class="col-12 text-center "> 
-                       <button class="btn btn-primary"> بحث</button>
-                    </div>
             </div>
           </div>
    
@@ -105,18 +99,20 @@
                                 <!-- <div class="col-12"><p class="text-right">سعيد نصار</p></div> -->
                                 <div class="col-12 d-flex justify-content-between">
                                     <div>
-                                        <p class="m-0 "><bdi>جنية</bdi> 1000 </p>
-                                        <span class="text-muted old-price"><bdi>جنية</bdi>1500</span> 
+                                        <p class="m-0 "><bdi>جنية</bdi> {{item.Price - item.Price * item.Discount }} </p>
+                                        <span class="text-muted old-price"><bdi>جنية</bdi>{{item.Price}}</span> 
                                     </div>
                                     <div class="status">
                                         <span *ngIf="i < 3">مستعمله</span>
                                         <span *ngIf="i > 3">جديدة</span>
                                     </div>
                                 </div>
+
                                 <div class="descount position-absolute">
-                                        <span> {{15 - i}}%-خصم</span>
+                                        <span> {{item.Discount * 100}}%خصم</span>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

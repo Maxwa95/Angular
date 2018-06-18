@@ -21,14 +21,16 @@ export class SparePartsComponent implements OnInit {
  brandsname = [];
  url:string = ''
  test = '';
- state = "*"
+ statenew = true
+ stateused = true
+ state = '*'
 
 
  public disabled: boolean = false;          
  public someValue: number = 0;
  public someMin: number = 0;
- public someMax: number = 0;
- public someRange = [0 , 0];
+ public someMax: number = 10000;
+ 
  public loading = false;
   public numbers;
  catesandbrands:Categoryandbrand=new Categoryandbrand();
@@ -68,11 +70,33 @@ export class SparePartsComponent implements OnInit {
   ngOnInit() {
     
   }
+  cstate()
+  {
 
-  onChange(event){
-    this.someRange[0] = event[0]
-    this.someRange[1] = event[1]
-    console.log(event);
+    this.state = (this.statenew == true && this.stateused == true) || (this.statenew == false && this.stateused == false)  ? '*' : this.statenew == true ? 'NEW' : 'USED';
+    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
+      (a) => {
+         this.loading = false;           
+         this.prod =  a.json(); 
+      },
+      (error) => {
+          this.loading = false;     
+      }
+    )
+  }
+
+  onChange(){
+    this.state = (this.statenew == true && this.stateused == true) || (this.statenew == false && this.stateused == false)  ? '*' : this.statenew == true ? 'NEW' : 'USED';
+    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
+      (a) => {
+         this.loading = false;           
+         this.prod =  a.json(); 
+      },
+      (error) => {
+          this.loading = false;     
+      }
+    )
+    
   }
 
   keywords(item){
@@ -82,6 +106,7 @@ export class SparePartsComponent implements OnInit {
     }else {
       this.catKeywords.splice(this.catKeywords.indexOf(item),1)  
     }
+    this.state = (this.statenew == true && this.stateused == true) || (this.statenew == false && this.stateused == false)  ? '*' : this.statenew == true ? 'NEW' : 'USED';
     this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
       (a) => {
          this.loading = false;           
@@ -101,6 +126,7 @@ export class SparePartsComponent implements OnInit {
     }else {
       this.brandsname.splice(this.brandsname.indexOf(item),1)   
     }
+    this.state = (this.statenew == true && this.stateused == true) || (this.statenew == false && this.stateused == false)  ? '*' : this.statenew == true ? 'NEW' : 'USED';
     this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
       (a) => {
         this.loading = false;    

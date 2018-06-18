@@ -11,6 +11,7 @@ import { NeededProducts } from './models/NeededProducts';
 import { checkout  } from "./models/checkout";
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { CookieService } from 'ngx-cookie-service';
+import { feedback } from './models/feedback';
 //import { json } from 'ng4-validators';
 
 @Injectable({
@@ -205,6 +206,13 @@ confirmOrder(access_token : string,cout:checkout)
   let options = new RequestOptions({ headers: headers });
 return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,options)
 
+    }
+    Addcomment(access_token : string,comment:feedback)
+    {
+      let headers = new Headers();
+      headers.append('Authorization','Bearer '+access_token);
+      let options = new RequestOptions({ headers: headers });
+return this.http.post("http://gearapi.azurewebsites.net/api/Feedback",comment,options)
     }
 
 }
