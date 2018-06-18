@@ -98,12 +98,9 @@ const appRoutes = [
   { path:"aboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
-<<<<<<< HEAD
 
-  { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
-=======
+ // { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
   { path:"sellerPage",component: TheSellerComponent},
->>>>>>> e93c267c21655f29c8db5ac2c69d14f01c5e6205
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
