@@ -43,10 +43,12 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-//import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
+import { TestComponent } from './test/test.component';
 import { TheSellerComponent } from './the-seller/the-seller.component';
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
+import { OrdersComponent } from './the-seller/orders/orders.component';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -58,21 +60,23 @@ const appRoutes = [
   { path: "edit-account3", component: EditAccount3Component},
   { path: "step1", component: Step1Component},
   { path: "login", component: LoginComponent},
-  { path: "seller", component: SallerRigisterComponent},
-  { path: "spareparts", component: SparePartsComponent},
   { path:"profil-shop",component: ProfilShopComponent},
   { path:"single",component: SingleProductComponent},
-  { path:"userprofile",component: ProfileComponent},
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
-  { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
+  {path: 'Addproduct', component: AddProductComponent},
   {path: 'Addproduct',component: AddProductComponent},
   // canActivate: [ClientService] },
 
 
   {
+    path: 'Addproduct',
+    component: AddProductComponent
+    // ,canActivate: [SellerService]
+  },
+  { 
     path: 'addproduct',
     component: AddProductComponent,
     canActivate: [SellerService] 
@@ -81,8 +85,8 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent,
-  canActivate: [SellerService] 
+  { path:"generateproduct",component: GenerateProductComponent
+  // ,canActivate: [SellerService] 
 },
   { path:"needproduct",component: NeedProductComponent,canActivate : [ClientService]},
   { path:"generateproduct/:id",component: GenerateProductComponent},
@@ -95,19 +99,31 @@ const appRoutes = [
   { path:"wrong",component: WrongComponent},
   { path:"EditProduct",component: EditProductComponent},
   { path:"SellerPage",component: TheSellerComponent},
+  { path:"AboutUs",component: AboutUsComponent},
+  { path:"editProduct/:id",component: EditProductComponent
+
+  //, canActivate: [SellerService]
+},
+
+  { path:"EditProduct",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent},
+  { path:"aboutUs",component: AboutUsComponent},
+  
+  { path:"editProduct/:id",component: EditProductComponent,
+  canActivate: [SellerService]},
+
+  {path:"sellerPage",component: TheSellerComponent},
   { path:"aboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
 
  // { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
   { path:"sellerPage",component: TheSellerComponent},
-  {path: "account", component: AccountSettingComponent}
+  {path: "account", component: AccountSettingComponent},
+  {path: "order", component: OrdersComponent}
+  
 /*  ,
   canActivate: [SellerService]*/
-
-  
-  
-  
 ]
 
 @NgModule({
@@ -143,6 +159,9 @@ const appRoutes = [
     WrongComponent,
     EditProductComponent,
     TheSellerComponent,
+    AccountSettingComponent,
+    OrdersComponent,
+    TestComponent,
     AccountSettingComponent
 
   ],

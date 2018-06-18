@@ -87,7 +87,7 @@
               <div  routerLink="/single/{{item.productId}}" class="col-lg-3 col-sm-4 col-6 mb-5 d-flex align-items-stretch" *ngFor="let item of prod; let i = index">
                 <div class="card-group">
                     <div class="card position-relative">
-                        <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.Imgs[0].ImgUrl}}" alt="Card image cap">
+                        <img class="card-img-top" src="http://gearapi.azurewebsites.net/Content/ProdImages/{{item.Imgs[0].ImgUrl}}" class="img-fluid" alt="Card image cap">
                         <div class="card-body p-0 pt-3 ">
                             <h6 routerLink="../single/{{item.productId}}" class="card-title text-right">{{item.ProductName}}</h6>
                             <div class="card-text">
