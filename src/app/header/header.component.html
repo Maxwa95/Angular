@@ -54,7 +54,7 @@
                                              </ul>
                                         </div>
 
-                                        <ng-template #temp>
+                                        <div  *ngIf="search.productsmatch?.length < 1">
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">
                                                     <div class="d-flex justify-content-between">
@@ -63,7 +63,7 @@
                                                     </div>
                                                 </li>
                                                 </ul>
-                                        </ng-template>
+                                        </div>
                                         
                                     </div>
                                 </div>
