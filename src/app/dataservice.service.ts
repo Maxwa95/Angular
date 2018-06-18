@@ -12,6 +12,7 @@ import { checkout  } from "./models/checkout";
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { CookieService } from 'ngx-cookie-service';
 import { feedback } from './models/feedback';
+import { ChangePasswordBindingModel } from './models/changepassword';
 //import { json } from 'ng4-validators';
 
 @Injectable({
@@ -212,8 +213,44 @@ return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,o
       let headers = new Headers();
       headers.append('Authorization','Bearer '+access_token);
       let options = new RequestOptions({ headers: headers });
-return this.http.post("http://gearapi.azurewebsites.net/api/Feedback",comment,options)
+      return this.http.post("http://gearapi.azurewebsites.net/api/Feedback",comment,options)
     }
+
+    Logout(access_token : string)
+    {
+      let headers = new Headers();
+      headers.append('Authorization','Bearer '+access_token);
+      let options = new RequestOptions({ headers: headers });
+      return this.http.post("http://gearapi.azurewebsites.net/api/Account/Logout",{},options)
+    }
+    ChangePassword(access_token : string,changepass : ChangePasswordBindingModel)
+    {
+      let headers = new Headers();
+      headers.append('Authorization','Bearer '+access_token);
+      let options = new RequestOptions({ headers: headers });
+      return this.http.post("http://gearapi.azurewebsites.net/api/Account/ChangePassword",changepass,options)
+   }
+   GetOrders(access_token : string)
+   {
+     let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get("http://gearapi.azurewebsites.net/api/needed",options)
+   }
+   GetOrderbyid(access_token : string,id : string)
+   {
+     let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get(`http://gearapi.azurewebsites.net/api/needed/${id}`,options)
+   }
+   ClientGetNeededProductsDetalis(access_token : string)
+   {
+     let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get(`http://gearapi.azurewebsites.net/api/neededproductforclient`,options)
+   }
 
 }
 
