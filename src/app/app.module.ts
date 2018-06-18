@@ -98,7 +98,6 @@ const appRoutes = [
   { path:"need-product",component: NeedProductComponent,
   canActivate: [ClientService] 
 },
-  { path:"generateproduct",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
