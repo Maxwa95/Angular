@@ -19,21 +19,22 @@
         div{
             .card{
                 border: none;
-                border-bottom: 2px solid #50c1e9;
                 border-radius: 0px;
-                background-color: transparent;
-                box-shadow: 1px 1px 5px #e5e5e5, -1px -1px 5px #e5e5e5;
-                padding: 10px;
                 margin:0px 10px;
-                //transition: all 1s ;
+                background-color: rgba($color: #fff, $alpha: .90);
+                transition:all .3s;
+                box-shadow: 0px 0px 5px 1px lightgrey;
+            
+                // transition: all s ease-in-out ;
+                .imgHere {
+                    overflow: hidden;
+                }
+
                 img{
                     border-radius: 0px;
-                    transition: all 1s;
+                    transition: all 1.5s;
                 }
-                // img:hover{
-                //     transform: scale(0.8);
-                //     cursor: pointer;
-                // }
+                
                 .card-body{
                     background-color: white;
                     padding-bottom: 0px;
@@ -48,8 +49,12 @@
                 }
             }
             .card:hover{
-                border-bottom: 2px solid #fbc326;
-                box-shadow: 5px 5px 7px #e5e5e5, -5px -5px 7px #e5e5e5;
+                box-shadow: 0px 0px 20px 3px lightgrey;
+                cursor: pointer;
+            
+                img {
+                    transform: scale(1.2);
+                }
             }
         }
     }

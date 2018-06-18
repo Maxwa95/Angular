@@ -83,7 +83,17 @@
                         <div class="col-4">
                             <img src="/assets/img/Adv/1.jpg" alt="" class="img-fluid">
                         </div>
-                    </div>            
+
+                    </div>       
+                    <div class="row ">
+                        <div class="col-12 text-center">
+                            <ngb-pagination [collectionSize]="40" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+                        </div>
+
+                    </div>
+                    
+                    
+
                             
           </div>
       
@@ -119,10 +129,7 @@
         </div>
       </section>
       
-      
-      <div class="title text-center">
-          <h3 class="d-inline"> شاهدته مؤخرا</h3> 
-       </div>
+
        <section class="productSec py-3">
            <div class="container-fluid">
                <div class="row">
