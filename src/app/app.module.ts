@@ -69,18 +69,12 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   {path: 'Addproduct', component: AddProductComponent},
-<<<<<<< HEAD
   {path: 'Addproduct',component: AddProductComponent},
   {path: 'OrderDetails', component: OrderDetailsComponent},
-  
-=======
   {path: 'test', component: TestComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'settings', component: AccountSettingComponent},
->>>>>>> 0a712eb4716a98065ea03148ec68a20017c2a6c6
   // canActivate: [ClientService] },
-
-
   {
     path: 'Addproduct',
     component: AddProductComponent
