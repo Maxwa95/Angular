@@ -71,15 +71,15 @@ const appRoutes = [
 
   {
     path: 'Addproduct',
-    component: AddProductComponent,
-    // canActivate: [SellerService] 
+    component: AddProductComponent
+    // ,canActivate: [SellerService] 
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent,
-  canActivate: [SellerService] 
+  { path:"generateproduct",component: GenerateProductComponent
+  // ,canActivate: [SellerService] 
 },
   { path:"needproduct",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
@@ -92,17 +92,14 @@ const appRoutes = [
   { path:"SellerPage",component: TheSellerComponent},
   { path:"AboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent
-  // canActivate: [SellerService]
+  
+  //, canActivate: [SellerService]
 },
 
   {path:"sellerPage",component: TheSellerComponent},
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
-
-  
-  
-  
 ]
 
 @NgModule({
