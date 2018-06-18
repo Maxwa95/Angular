@@ -7,14 +7,11 @@ import { seller } from './models/seller';
 import { login } from './models/login';
 import { ProductInfo } from './models/ProductInfo';
 import { productdesc } from './models/productdesc';
-<<<<<<< HEAD
 import { NeededProducts } from './models/NeededProducts';
 import { checkout  } from "./models/checkout";
-=======
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { CookieService } from 'ngx-cookie-service';
 
->>>>>>> e51a507a023271bcab8a30abbfc7e4e55558e08c
 @Injectable({
   providedIn: 'root'
 })
