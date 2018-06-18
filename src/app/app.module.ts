@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes  } from '@angular/router';
+import { ModalModule } from 'ngx-bootstrap';
 import {CanActivate} from "@angular/router";
 import { HttpClientModule,HttpClient } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
@@ -49,7 +50,7 @@ import { TheSellerComponent } from './the-seller/the-seller.component';
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
 import { OrdersComponent } from './the-seller/orders/orders.component';
-
+import { OrderDetailsComponent } from './order-details/order-details.component';
 const appRoutes = [
   { path: "", component: HomeComponent},
   { path: "register", component: RegisterComponent},
@@ -68,6 +69,8 @@ const appRoutes = [
   { path:"cart",component: CartComponent},
   {path: 'Addproduct', component: AddProductComponent},
   {path: 'Addproduct',component: AddProductComponent},
+  {path: 'OrderDetails', component: OrderDetailsComponent},
+  
   // canActivate: [ClientService] },
 
 
@@ -163,7 +166,8 @@ const appRoutes = [
     AccountSettingComponent,
     OrdersComponent,
     TestComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    OrderDetailsComponent
 
   ],
   imports: [
@@ -177,6 +181,7 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
+    ModalModule.forRoot(),
     
     FormsModule,
     CustomFormsModule

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NeededProducts } from '../models/NeededProducts';
 import { DataserviceService } from '../dataservice.service';
 import { CookieService } from 'ngx-cookie-service';
-
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 @Component({
   selector: 'app-need-product',
   templateUrl: './need-product.component.html',
@@ -10,14 +11,20 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class NeedProductComponent implements OnInit {
   NeedProduct : NeededProducts = new NeededProducts()
-  file : File 
-  constructor(public data : DataserviceService,public cookie:CookieService) { }
+  file : File ;
+  modalRef: BsModalRef;
+
+  constructor(public data : DataserviceService,public cookie:CookieService , private modalService: BsModalService) { }
 
   ngOnInit() {
   }
 
   fileUpload(event : FileList){
     this.file = event.item(0)
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
   submit()
@@ -27,7 +34,7 @@ export class NeedProductComponent implements OnInit {
     console.log(this.NeedProduct)
     this.data.Needproduct(this.cookie.get("access_token"),this.NeedProduct,this.file).subscribe(
       a=>{
-        alert("done")
+        // alert("done")
       }
       ,
       err=>{

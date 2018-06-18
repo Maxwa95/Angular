@@ -44,7 +44,7 @@
                                 <input type="text" name="search" class="form-control w-100 col-sm-10  rounded-0" placeholder="ابحث هنا" (keyup)="sendKey()"  [(ngModel)]="keywords">
                                 <div class="col-sm-10">
                                     <div class="result position-absolute w-100">
-                                        <div *ngIf="keywords?.length ; else temp">
+                                        <div *ngIf="keywords?.length">
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item" *ngFor="let item of search.productsmatch">
                                                     <a href="/search/{{item}}">
@@ -54,7 +54,7 @@
                                              </ul>
                                         </div>
 
-                                        <div  *ngIf="search.productsmatch?.length < 1">
+                                        <div *ngIf="search.productsmatch?.length < 1">
                                             <ul class="list-group list-group-flush">
                                                 <li class="list-group-item">
                                                     <div class="d-flex justify-content-between">
@@ -62,7 +62,7 @@
                                                         <button class="btn btn-primary" routerLink="needproduct">أطلب القطعة </button>
                                                     </div>
                                                 </li>
-                                                </ul>
+                                            </ul>
                                         </div>
                                         
                                     </div>

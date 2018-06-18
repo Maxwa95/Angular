@@ -25,9 +25,22 @@
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="fileUpload($event.target.files)">
                         </div>
                     </div>
-                    <button class="btn btn-primary text-center" (click)="submit()">طلب</button>
+                    <button class="btn btn-primary text-center"  (click)="openModal(template)" (click)="submit()">طلب</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+ 
+<ng-template #template>
+  <div class="py-4 px-3 d-flex justify-content-end border-bottom  text-right">
+    <h4 class="text-right pr-2 text-success">لقد تم إرسال طلبك بنجاح</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-right">
+      عند توافر القطعة سوف تصل اليك رسالة نصية عبر الهاتف المحمول 
+  </div>
+</ng-template>
