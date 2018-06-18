@@ -61,13 +61,14 @@ const appRoutes = [
   { path: "step1", component: Step1Component},
   { path: "login", component: LoginComponent},
   { path:"profil-shop",component: ProfilShopComponent},
+  { path:"spareparts",component: SparePartsComponent},
   { path:"single",component: SingleProductComponent},
   { path:"profile",component: ProfileComponent},
   { path:"shop",component: ShopComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   {path: 'Addproduct', component: AddProductComponent},
-  {path: 'Addproduct',component: AddProductComponent},
+
   // canActivate: [ClientService] },
 
 
@@ -106,7 +107,6 @@ const appRoutes = [
 },
 
   { path:"EditProduct",component: EditProductComponent},
-  { path:"SellerPage",component: TheSellerComponent},
   { path:"aboutUs",component: AboutUsComponent},
   
   { path:"editProduct/:id",component: EditProductComponent,
@@ -118,7 +118,6 @@ const appRoutes = [
   canActivate: [SellerService]},
 
  // { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
-  { path:"sellerPage",component: TheSellerComponent},
   {path: "account", component: AccountSettingComponent},
   {path: "order", component: OrdersComponent}
   
