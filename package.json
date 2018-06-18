@@ -25,6 +25,7 @@
     "@auth0/angular-jwt": "^2.0.0",
     "@ng-bootstrap/ng-bootstrap": "^2.0.0",
     "angular": "^1.7.0",
+    "angular-maps": "^0.8.3",
     "bootstrap-v4-rtl": "^4.1.1-0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",

@@ -46,6 +46,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 // import { AuthService } from './auth.service';
 import {TheSellerComponent}from'./the-seller/the-seller.component';
 import { TestComponent } from './test/test.component';
+
+// import { AuthService } from './auth.service';
+
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
 
@@ -92,14 +95,22 @@ const appRoutes = [
   { path:"SellerPage",component: TheSellerComponent},
   { path:"AboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent
-  
+
   //, canActivate: [SellerService]
 },
+
+  { path:"EditProduct",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent},
+  { path:"aboutUs",component: AboutUsComponent},
+  
+  { path:"editProduct/:id",component: EditProductComponent,
+  canActivate: [SellerService]},
 
   {path:"sellerPage",component: TheSellerComponent},
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
+
 ]
 
 @NgModule({
@@ -135,6 +146,7 @@ const appRoutes = [
     WrongComponent,
     EditProductComponent,
     TheSellerComponent,
+    TheSellerComponent,
     TestComponent,
     AccountSettingComponent
 
@@ -150,6 +162,7 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
+    
     FormsModule,
     CustomFormsModule
   ],
@@ -157,4 +170,3 @@ const appRoutes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
