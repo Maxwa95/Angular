@@ -43,7 +43,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { TheSellerComponent } from "./the-seller/the-seller.component";
+//import { AuthService } from './auth.service';
+import { TheSellerComponent } from './the-seller/the-seller.component';
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
 
@@ -67,6 +68,7 @@ const appRoutes = [
   { path:"userprofile",component: ProfileComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
+  {path: 'Addproduct',component: AddProductComponent},
   // canActivate: [ClientService] },
 
 
@@ -91,10 +93,17 @@ const appRoutes = [
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
+  { path:"EditProduct",component: EditProductComponent},
+  { path:"SellerPage",component: TheSellerComponent},
+  { path:"aboutUs",component: AboutUsComponent},
   { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
+<<<<<<< HEAD
 
   { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
+=======
+  { path:"sellerPage",component: TheSellerComponent},
+>>>>>>> e93c267c21655f29c8db5ac2c69d14f01c5e6205
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
@@ -151,6 +160,7 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
+    
     FormsModule,
     CustomFormsModule
   ],
@@ -158,4 +168,3 @@ const appRoutes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
