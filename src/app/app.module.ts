@@ -46,6 +46,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { TheSellerComponent } from "./the-seller/the-seller.component";
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
+import { OrdersComponent } from './the-seller/orders/orders.component';
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -93,7 +94,9 @@ const appRoutes = [
   canActivate: [SellerService]},
 
   { path:"sellerPage",component: TheSellerComponent},
-  {path: "account", component: AccountSettingComponent}
+  {path: "account", component: AccountSettingComponent},
+  {path: "order", component: OrdersComponent}
+  
 /*  ,
   canActivate: [SellerService]*/
 
@@ -135,7 +138,8 @@ const appRoutes = [
     WrongComponent,
     EditProductComponent,
     TheSellerComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    OrdersComponent
 
   ],
   imports: [
