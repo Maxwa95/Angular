@@ -82,6 +82,7 @@ const appRoutes = [
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
+  { path:"spareparts",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
   { path:"generateproduct",component: GenerateProductComponent
