@@ -38,9 +38,14 @@ ngOnInit() {
         (res) => {
           console.log(res);
           this.search = res.json();
+          console.log( res.json())
         }
       )
     }
+
+     else {
+       
+     }
   }
 
   

@@ -17,6 +17,7 @@ export class AddProductComponent implements OnInit {
   models:model[]=[]
   
   prod:productdesc=new productdesc()
+  imgs : File[]
   
   constructor(private cookieService : CookieService,private Data : DataserviceService) { 
 
@@ -35,8 +36,26 @@ export class AddProductComponent implements OnInit {
     )
 
   }
+
+  fileUpload(event){
+    this.imgs= event;
+    console.log(this.imgs.length)
+  }
+
   save():void{
-      this.Data.AddProduct(this.prod,this.cookieService.get("access_token")).subscribe(a=>{alert(a)},error=>{alert(error)});
+    if (this.imgs != undefined) {
+      
+      this.Data.AddProduct(this.prod,this.cookieService.get("access_token")).then(
+
+   a=>{
+     console.log(a.json().id)
+      this.Data.AddImagestoProduct(this.cookieService.get("access_token"),this.imgs,a.json().id)
+.subscribe(a=>{
+alert('done')
+})
+ }
+      )
+    }
 
   }
 

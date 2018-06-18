@@ -40,18 +40,31 @@
                     <div class="col-8">
                         <!--  Center  --> 
                         <form action="" class="search-form">
-                            <div class="row position-relative">
-                                <input type="text" name="search" class="form-control w-100 col-sm-11 rounded-0" placeholder="ابحث هنا" (keyup)="sendKey()"  [(ngModel)]="keywords">
-                                <button class="btn btn-primary col-sm-1 rounded-0 text-center"><i class="fa fa-search"></i></button>
-                                <div class="col-sm-12">
-                                    <div class="result position-absolute w-100" *ngIf="keywords?.length > 0">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item" *ngFor="let item of search.productsmatch">
-                                                <a href="/search/{{item}}">
-                                                     {{item}}
-                                                </a> 
-                                            </li>
-                                         </ul>
+                            <div class="row position-relative justify-content-center">
+                                <input type="text" name="search" class="form-control w-100 col-sm-10  rounded-0" placeholder="ابحث هنا" (keyup)="sendKey()"  [(ngModel)]="keywords">
+                                <div class="col-sm-10">
+                                    <div class="result position-absolute w-100">
+                                        <div *ngIf="keywords?.length ; else temp">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" *ngFor="let item of search.productsmatch">
+                                                    <a href="/search/{{item}}">
+                                                         {{item}}
+                                                    </a> 
+                                                </li>
+                                             </ul>
+                                        </div>
+
+                                        <ng-template #temp>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <div class="d-flex justify-content-between">
+                                                        <p>القطعة غير متوفرة </p>
+                                                        <button class="btn btn-primary">أطلب القطعة </button>
+                                                    </div>
+                                                </li>
+                                                </ul>
+                                        </ng-template>
+                                        
                                     </div>
                                 </div>
                             </div> 
@@ -136,13 +149,16 @@
                         <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item px-2">
-                        <a routerLink="SpareParts" class="nav-link" href="#">قطع غيار</a>
+                        <a routerLink="SpareParts" class="nav-link" href="#"> قطع غيار وأكسسورات</a>
                     </li>
                     <li class="nav-item px-2">
                         <a routerLink="shop" class="nav-link">محلات</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a routerLink="wrong" class="nav-link" href="#">كشف الاعطال</a>
+                        <a routerLink="needproduct" class="nav-link">طلب قطعة غيار</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a routerLink="wrong" class="nav-link" href="#"> جهاز كشف الاعطال</a>
                     </li>
                     <li class="nav-item px-2">
                         <a routerLink="advice" class="nav-link" href="#">نصائح</a>
@@ -174,16 +190,17 @@
                     <a routerLink="" class="nav-link" href="">الرئيسية <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item px-2">
-                    <a routerLink="spareparts" class="nav-link" href="">قطع غيار</a>
+                    <a routerLink="spareparts" class="nav-link" href=""> قطع غيار وأكسسورات</a>
                 </li>
                 <li class="nav-item px-2">
                     <a routerLink="shop" class="nav-link" href="">محلات</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="#">إكسسورات</a>
+                    <a routerLink="needproduct" class="nav-link">طلب قطعة غيار</a>
                 </li>
                 <li class="nav-item px-2">
                     <a routerLink="wrong" class="nav-link" href="#">كشف الاعطال</a>
+                    <a routerLink="wrong" class="nav-link" href="#">جهاز كشف الاعطال</a>
                 </li>
                 <li class="nav-item px-2">
                     <a routerLink="advice" class="nav-link" href="#">نصائح</a>
