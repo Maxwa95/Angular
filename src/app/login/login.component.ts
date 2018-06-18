@@ -3,6 +3,7 @@ import {login} from '../models/login';
 import {DataserviceService} from '../dataservice.service';
 import { error } from 'protractor';
 import { CookieService } from 'ngx-cookie-service';
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,13 +24,14 @@ public loading = false;
   }
   login()
   {
+    debugger;
   this.loading = true;  
   let body =  "username=" + this.user.username + "&password="+this.user.password+"&grant_type=password";
   this.dataService.login(body).subscribe(
     a=>{
       this.loading = false;
       //access token assign it to what ever
-      this.cookieService.set( 'access_token', a.json().access_token,);
+      this.cookieService.set( 'access_token', a.json().access_token,30);//30 days
       console.log(a.json().access_token)
       alert("Welcome user");
     },

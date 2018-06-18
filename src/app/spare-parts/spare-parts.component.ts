@@ -21,12 +21,14 @@ export class SparePartsComponent implements OnInit {
  brandsname = [];
  url:string = ''
  test = '';
+ state = "*"
+
 
  public disabled: boolean = false;          
- public someValue: number = 550;
- public someMin: number = 500;
- public someMax: number = 5000;
- public someRange = [500 , 4000];
+ public someValue: number = 0;
+ public someMin: number = 0;
+ public someMax: number = 0;
+ public someRange = [0 , 0];
  public loading = false;
   public numbers;
  catesandbrands:Categoryandbrand=new Categoryandbrand();
@@ -50,7 +52,6 @@ export class SparePartsComponent implements OnInit {
     this.dataservice.productsPaging(this.pagenumber).subscribe(
       (a)=>{
       this.prod =  a.json()
-     
       } 
       )
 
@@ -81,7 +82,7 @@ export class SparePartsComponent implements OnInit {
     }else {
       this.catKeywords.splice(this.catKeywords.indexOf(item),1)  
     }
-    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname).subscribe(
+    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
       (a) => {
          this.loading = false;           
          this.prod =  a.json(); 
@@ -100,7 +101,7 @@ export class SparePartsComponent implements OnInit {
     }else {
       this.brandsname.splice(this.brandsname.indexOf(item),1)   
     }
-    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname).subscribe(
+    this.dataservice.filterByBrandAndCat(this.pagenumber, this.catKeywords, this.brandsname,this.state,this.someMin,this.someMax).subscribe(
       (a) => {
         this.loading = false;    
         this.prod =  a.json()  
