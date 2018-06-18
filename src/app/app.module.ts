@@ -68,10 +68,10 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   // canActivate: [ClientService] },
- 
+
 
   {
-    path: 'Addproduct',
+    path: 'addproduct',
     component: AddProductComponent,
     canActivate: [SellerService] 
 },
@@ -82,9 +82,11 @@ const appRoutes = [
   { path:"generateproduct",component: GenerateProductComponent,
   canActivate: [SellerService] 
 },
-  { path:"needproduct",component: NeedProductComponent},
+  { path:"needproduct",component: NeedProductComponent,canActivate : [ClientService]},
   { path:"generateproduct/:id",component: GenerateProductComponent},
-  { path:"need-product",component: NeedProductComponent},
+  { path:"need-product",component: NeedProductComponent,
+  canActivate: [ClientService] 
+},
   { path:"generateproduct",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
@@ -92,7 +94,7 @@ const appRoutes = [
   { path:"editProduct/:id",component: EditProductComponent,
   canActivate: [SellerService]},
 
-  { path:"sellerPage",component: TheSellerComponent},
+  { path:"sellerPage",component: TheSellerComponent,canActivate : [SellerService]},
   {path: "account", component: AccountSettingComponent}
 /*  ,
   canActivate: [SellerService]*/
