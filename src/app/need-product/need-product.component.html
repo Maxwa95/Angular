@@ -4,33 +4,24 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center">
-                <div class="p-4">
+<<<<<<< HEAD
+                <div class="p-4 x">
                     <div class="form-row mb-4">
+=======
+                <div class=" py-5 x">
+                    <div class="form-row mb-4 ">
+>>>>>>> 680ca9c8a789a03000a9b44e27c48613b228c6f3
                         <div class="form-group col-md-12 text-right">
                         <label for="inputEmail4">اسم القطعة</label>
                         <input type="text" [(ngModel)]="NeedProduct.FullName" class="form-control text-right">
                         </div>
+<<<<<<< HEAD
+                    </div>                                     
+=======
                     </div>                    
             
-                 <!--
-                    <div class="form-row mb-5">
-                        <div class="form-group col-md-12  text-right ">
-                            <label for="inputState">الموديل</label>
-                            <select id="inputState" class="form-control">
-                                <option selected></option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row mb-5">
-                        <div class="form-group col-md-12 text-right">
-                            <label for="inputState">الماركة</label>
-                            <select id="inputState" class="form-control">
-                                <option selected></option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                    </div>-->
+   
+>>>>>>> 680ca9c8a789a03000a9b44e27c48613b228c6f3
                     <div class="form-group">
                         <div class="form-group col-md-12 text-right p-0">
                             <label for="exampleFormControlTextarea1" >الوصف</label>
@@ -43,9 +34,22 @@
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" (change)="fileUpload($event.target.files)">
                         </div>
                     </div>
-                    <button class="btn btn-primary text-center" (click)="submit()">طلب</button>
+                    <button class="btn btn-primary text-center"  (click)="openModal(template)" (click)="submit()">طلب</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+ 
+<ng-template #template>
+  <div class="py-4 px-3 d-flex justify-content-end border-bottom  text-right">
+    <h4 class="text-right pr-2 text-success">لقد تم إرسال طلبك بنجاح</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-right">
+      عند توافر القطعة سوف تصل اليك رسالة نصية عبر الهاتف المحمول 
+  </div>
+</ng-template>
