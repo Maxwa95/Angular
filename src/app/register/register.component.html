@@ -76,7 +76,7 @@
                     [notEqualTo]="password"
                     #certainPassword="ngModel"
                     name="certainPassword"
-                    [ngModelOptions]="{ updateOn: 'blur' }"
+                    [ngModelOptions]="{ updateOn:'blur'}"
                     #confirm                    
                     >
                     <p *ngIf="!certainPassword.errors?.notEqualTo" class="alert alert-danger mt-2">
@@ -84,11 +84,7 @@
                     </p>
                 </div>                   
                 <div class="buttons w-100">
-<<<<<<< HEAD
                     <button  (click)="navigate()" class="btn btn-custom btn-custom-gray btn-block text-center">الخطوة التالية</button>
-=======
-                    <button   (click)="navigate()" class="btn btn-custom btn-custom-gray btn-block text-center">الخطوة التالية</button>
->>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
                 </div>     <!--routerLink="/step1"-->   
             </form>
             </div>
