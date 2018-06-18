@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes  } from '@angular/router';
+import { ModalModule } from 'ngx-bootstrap';
 import {CanActivate} from "@angular/router";
 import { HttpClientModule,HttpClient } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
@@ -49,7 +50,7 @@ import { TheSellerComponent } from './the-seller/the-seller.component';
 import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
 import { CustomFormsModule } from 'ng4-validators';
 import { OrdersComponent } from './the-seller/orders/orders.component';
-
+import { OrderDetailsComponent } from './order-details/order-details.component';
 const appRoutes = [
   { path: "", component: HomeComponent},
   { path: "register", component: RegisterComponent},
@@ -68,9 +69,15 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   {path: 'Addproduct', component: AddProductComponent},
+<<<<<<< HEAD
+  {path: 'Addproduct',component: AddProductComponent},
+  {path: 'OrderDetails', component: OrderDetailsComponent},
+  
+=======
   {path: 'test', component: TestComponent},
   {path: 'orders', component: OrdersComponent},
   {path: 'settings', component: AccountSettingComponent},
+>>>>>>> 0a712eb4716a98065ea03148ec68a20017c2a6c6
   // canActivate: [ClientService] },
 
 
@@ -86,6 +93,7 @@ const appRoutes = [
 },
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
+  { path:"spareparts",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
   { path:"generateproduct",component: GenerateProductComponent
@@ -163,7 +171,8 @@ const appRoutes = [
     AccountSettingComponent,
     OrdersComponent,
     TestComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    OrderDetailsComponent
 
   ],
   imports: [
@@ -177,6 +186,7 @@ const appRoutes = [
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
+    ModalModule.forRoot(),
     
     FormsModule,
     CustomFormsModule
