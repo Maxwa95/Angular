@@ -21,7 +21,7 @@ export class product{
  Manufacturer:string = "" 
  state:string = ""
  CompanyId:number = 2
- Product : product = new product()
+ Product : product
  Brands : brand = new brand()
  Models : Description = new Description()
  }

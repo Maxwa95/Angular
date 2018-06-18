@@ -6,6 +6,8 @@ import { DataserviceService } from '../dataservice.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  page = 1;
+
  constructor(private Ds : DataserviceService){
 
   this.Ds.setCart("Mahmoud")

@@ -13,18 +13,20 @@
                       name="email"  
                       [(ngModel)]="user.username" 
                       required
-                      name="field" #email="ngModel" ngvemail
-                      [ngModelOptions]="{ updateOn: 'blur' }" 
+                      name="field" 
+                       [ngModelOptions]="{ updateOn: 'blur' }" 
                       >
-                      <p *ngIf="email.errors?.email" class="alert alert-danger mt-2"> ايميل خاطئ</p>
+                    <!--  #email="ngModel" ngvemail -->
+                    
+                    <!--  <p *ngIf="email.errors?.email" class="alert alert-danger mt-2"> ايميل خاطئ</p> -->
                 </div>  
                 <div class="form-group col-sm-12 pb-2">
                     <label for="exampleInputPassword1">كلمة المرور</label>
-                    <input type="text" name="password" 
+                    <input type="password" name="password" 
                      class="form-control" id="exampleInputPassword1" 
                      [(ngModel)]="user.password" required
                      name="password" #password="ngModel" 
-                     [rangeLength]="[8, 20]"
+                     [rangeLength]="[6, 20]"
                      [ngModelOptions]="{ updateOn: 'blur' }"
                      >
                      <p *ngIf="password.errors?.rangeLength" class="alert alert-danger mt-2">الرقم السري خاطى لابد ان يكن اكثر من 8 حروف وارقام</p>                     
@@ -35,7 +37,7 @@
                 </div>   
                 <div class="buttons w-100">
                     <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-                    <button  [disabled]="!password.valid || !email.valid" class="btn btn-custom btn-custom-gray btn-block text-center" (click)="login()" >تسجيل</button>
+                    <button  [disabled]="!password.valid" class="btn btn-custom btn-custom-gray btn-block text-center" (click)="login()" >تسجيل</button>
                 </div>   
             </div>
             <hr>

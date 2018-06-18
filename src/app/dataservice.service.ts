@@ -11,6 +11,8 @@ import { NeededProducts } from './models/NeededProducts';
 import { checkout  } from "./models/checkout";
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { CookieService } from 'ngx-cookie-service';
+import { feedback } from './models/feedback';
+//import { json } from 'ng4-validators';
 
 @Injectable({
   providedIn: 'root'
@@ -91,10 +93,10 @@ searchByKey(key){
   //  Filter Function
 
   filterSearchByName(pnum:number=1, pname:string='*'){
-    return this.http.get('http://gearapi.azurewebsites.net/api/clientproducts?pagenum='+pnum+'&name='+pname)
+    return this.http.get('http://gearapi.azurewebsites.net/api/ClientProducts/byname?pagenum='+pnum+'&name='+pname)
   }
 
-  filterByBrandAndCat(pnum:number=1, cname, bname){
+  filterByBrandAndCat(pnum:number=1, cname, bname,state:string='*',min=0,max=0){
     if (cname.length == 0) {
       cname = "*";
     }else{
@@ -105,7 +107,7 @@ searchByKey(key){
     }else{
       bname = bname.join(",");
     }
-    return this.http.get('http://gearapi.azurewebsites.net/api/filterclientproducts?pagenum='+pnum+'&catename='+cname+'&brandsname='+bname)
+    return this.http.get('http://gearapi.azurewebsites.net/api/filterclientproducts?pagenum='+pnum+'&catename='+cname+'&brandsname='+bname+'&status='+state+'&low='+min+'&high='+max)
   }
   //selller infos
 profileCompany(compid:number){
@@ -133,7 +135,20 @@ AddProduct(pro:productdesc,access_token : string)
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token); 
     headers.append('Content-type','application/json');
-  return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
+  return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers}).toPromise();
+}
+AddImagestoProduct(access_token : string, imgs : File[],prodid : string)
+{ 
+  debugger; 
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token); 
+  let options = new RequestOptions({ headers: headers });
+   let fd = new FormData();
+   fd.append('prodid',prodid)
+   for (let index = 0; index < imgs.length; index++) {
+    fd.append('imgs'+index,imgs[index], imgs[index].name)
+   }
+  return this.http.post('http://gearapi.azurewebsites.net/api/seller/productImages',fd,options);
 }
 EditProduct(pro:productdesc,access_token : string)
 {
@@ -191,6 +206,13 @@ confirmOrder(access_token : string,cout:checkout)
   let options = new RequestOptions({ headers: headers });
 return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,options)
 
+    }
+    Addcomment(access_token : string,comment:feedback)
+    {
+      let headers = new Headers();
+      headers.append('Authorization','Bearer '+access_token);
+      let options = new RequestOptions({ headers: headers });
+return this.http.post("http://gearapi.azurewebsites.net/api/Feedback",comment,options)
     }
 
 }

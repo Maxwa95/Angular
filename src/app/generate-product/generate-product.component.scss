@@ -57,3 +57,37 @@ left: 0;
 top: 0;
 opacity: 0;
 }
+
+
+
+ul{
+    list-style-type: none;
+    border: 1px solid lightgray;
+    padding: 0;
+    li {
+
+        padding: 20px;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        text-align: center;
+        background-color: white;
+        
+    }
+
+    li:hover {
+        cursor: pointer;
+        background-color: #1E88E5;
+        color: white;
+    }
+
+
+    .active {
+        background-color: #1E88E5;
+        color: white;
+
+
+    }
+
+}
+
+

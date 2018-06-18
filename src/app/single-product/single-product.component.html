@@ -57,7 +57,7 @@
                 <div class="add-cart">
                     <div class="card text-right p-2">
                         <h5> أضف الى العربة </h5>
-                        <span> خصم 50% على هذه القطعة </span>
+                        <span> خصم {{getprod.product.Discount * 100}}% على هذه القطعة </span>
                         <hr>
                         <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>                             
                         <button class="btn btn-primary" (click)="addToCart()"> أضف الى العربة</button>
@@ -132,6 +132,32 @@
                     </div>                   
                 </div> 
         </div>
+
+        <div class="container">
+            <h6> التعليقات </h6>
+            <div class="row">
+                <div class="col-sm-1 ">
+                    <img class="img-thumbnail" src="http://placehold.it/50x50" alt="">
+                </div>
+                <div class="col-sm-11 ">
+                    <div class="comm_name">
+                        <span></span>
+                    </div>
+                    <div class="comm_content">
+                      
+                        <span class="text-primary">
+                            
+                            <p class="w-50"> Add Comment : <input type="text" [(ngModel)]="fb.Comment"/>  </p>
+                             <button (click)="submitcomment()">
+                                 Add comment
+                             </button>
+                        </span>
+                    </div>
+                    <hr>
+                </div>                   
+            </div> 
+    </div>
+    
         <!-- <div class="container">
             <p *ngIf="getprod.comments?.length < 1"> لا توجد تعليقات على هذا المنتج </p>
         </div> -->

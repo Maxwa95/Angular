@@ -19,10 +19,9 @@ export class HeaderComponent implements OnInit {
   searchResult=[];
   allCarts:cart[] = [];
   public search = new search();
-
   constructor(private http:DataserviceService, private url:Router) { 
   this.search.catsmatch=[]; 
-  this.search.productsmatch=[];
+  this.search.productsmatch=[""];
   this.allCarts =  JSON.parse(localStorage.getItem('cart')) || [];
 }
 
@@ -38,9 +37,15 @@ ngOnInit() {
         (res) => {
           console.log(res);
           this.search = res.json();
+          console.log( this.search)
+        },
+        (error) =>{
         }
       )
     }
+
+     else {
+     }
   }
 
   
