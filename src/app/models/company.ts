@@ -1,6 +1,6 @@
 export class company{
  CompanyId:number
- CompanyName: string
+ CompanyName: string = ""
  Address:string
  HomePhone:string
  view:number

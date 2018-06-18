@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { cart } from './models/cart';
+import { checkout as cout } from "./models/checkout";
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +15,7 @@ export class Cart {
     addtocart(cart: cart) {
         if (this.carts.indexOf(cart) == -1) {
             this.carts.push(cart) 
+            
         }else{
             this.carts[this.carts.indexOf(cart)].quantity +=1;
        }
@@ -42,6 +44,19 @@ export class Cart {
         this.bs.next(this.carts)
         localStorage.setItem("cart",JSON.stringify(this.carts))
     }
+
+    checkout()
+    {
+    let chkout = new cout()   
+        let total = 0;
+    this.carts.forEach(e => {
+       total += e.product.Price * e.quantity
+    });
+    chkout.cart = this.carts
+    chkout.total = total
+    return chkout;
+    }
+    
    
 }
   

@@ -29,7 +29,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SingleShopComponent } from './single-shop/single-shop.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import{AddressesComponent} from'./addresses/addresses.component'
+import{  AddressesComponent } from'./addresses/addresses.component'
 import { CookieService } from 'ngx-cookie-service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NouisliderModule } from 'ng2-nouislider';
@@ -37,15 +37,22 @@ import { GenerateProductComponent } from './generate-product/generate-product.co
 import { LoadingModule } from 'ngx-loading';
 import { NeedProductComponent } from './need-product/need-product.component';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
-import { AuthGuardService as AuthGuard } from "./auth-guard.service";
+import { SellerService } from "./SellerService.service";
+import { ClientService } from "./client-service.service";
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdviceComponent } from './advice/advice.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+<<<<<<< HEAD
 import { AuthService } from './auth.service';
 import {TheSellerComponent}from'./the-seller/the-seller.component';
 import { TestComponent } from './test/test.component'
 
+=======
+import { TheSellerComponent } from "./the-seller/the-seller.component";
+import { AccountSettingComponent } from './the-seller/account-setting/account-setting.component';
+import { CustomFormsModule } from 'ng4-validators';
+>>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
 
 const appRoutes = [
   { path: "", component: HomeComponent},
@@ -63,20 +70,46 @@ const appRoutes = [
   { path:"shop",component: ShopComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
+<<<<<<< HEAD
   {path: 'Addproduct', component: AddProductComponent},
+=======
+  // canActivate: [ClientService] },
+ 
+
+  {
+    path: 'Addproduct',
+    component: AddProductComponent,
+    canActivate: [SellerService] 
+},
+>>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
   { path:"single/:id",component: SingleProductComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"addresses",component: AddressesComponent},
   { path:"single-shop",component: SingleShopComponent},
-  { path:"generateproduct",component: GenerateProductComponent},
-  { path:"need-product",component: NeedProductComponent},
+  { path:"generateproduct",component: GenerateProductComponent,
+  canActivate: [SellerService] 
+},
+  { path:"needproduct",component: NeedProductComponent},
   { path:"generateproduct/:id",component: GenerateProductComponent},
+  { path:"need-product",component: NeedProductComponent},
+  { path:"generateproduct",component: GenerateProductComponent},
   { path:"contact-us",component: ContactUsComponent},
   { path:"advice",component: AdviceComponent},
   { path:"wrong",component: WrongComponent},
+<<<<<<< HEAD
   { path:"EditProduct",component: EditProductComponent},
   { path:"SellerPage",component: TheSellerComponent},
   { path:"AboutUs",component: AboutUsComponent}
+=======
+  { path:"editProduct/:id",component: EditProductComponent,
+  canActivate: [SellerService]},
+
+  { path:"sellerPage",component: TheSellerComponent},
+  {path: "account", component: AccountSettingComponent}
+/*  ,
+  canActivate: [SellerService]*/
+
+>>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
   
   
   
@@ -115,7 +148,11 @@ const appRoutes = [
     WrongComponent,
     EditProductComponent,
     TheSellerComponent,
+<<<<<<< HEAD
     TestComponent
+=======
+    AccountSettingComponent
+>>>>>>> 9fd66be55ebd1675a9fb2f77820125605e6c3cf6
 
   ],
   imports: [
@@ -125,14 +162,14 @@ const appRoutes = [
     HttpModule, 
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    HttpModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     NouisliderModule,
     LoadingModule,
-
+    FormsModule,
+    CustomFormsModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,SellerService,ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

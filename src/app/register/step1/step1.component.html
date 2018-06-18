@@ -1,29 +1,43 @@
 
 <!-- Registration Form  -->
-
+<body>
     <div class="register p-5 text-white my-5">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="" class="text-center w-100"><img src="./assets/img/logo.png" alt="logo"></a>
         </div>
         
-          <div class="row pt-3">
+        <div class="row pt-3">
             <div class="form-group col-sm-12 pb-2">
           <div class="row">  
             <!-- <form action="" class="form-register"> -->
             <div class="person-details" *ngIf="!companyStatus == true">
                 <div class="form-group col-sm-12 pb-2">
                     <label for="exampleInputEmail1">البريد الالكتروني </label>
-                    <input type="email" class="form-control" [(ngModel)]="client.Email" id="exampleInputEmail1">
+                    <input type="email" class="form-control"
+                     [(ngModel)]="client.Email"
+                      id="exampleInputEmail1"
+                      name="email"  
+                      [(ngModel)]="user.username"
+                      required
+                      name="field" #email="ngModel" ngvemail
+                      [ngModelOptions]="{ updateOn: 'blur' }"
+                      >
+                      <p *ngIf="email.errors?.email" class="alert alert-danger mt-2"> ايميل خاطئ</p>
                 </div>
                 <div class="form-group col-sm-12 pb-2">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="exampleInputNumber">التليفون</label>
-                            <input type="email" [(ngModel)]="client.PhoneNumber" class="form-control" id="exampleInputNumber" aria-describedby="emailHelp">
+                            <label for="exampleInputNumber">التليفون  <span class="require">*</span></label>
+                            <input type="email" [(ngModel)]="client.PhoneNumber"
+                             class="form-control" id="exampleInputNumber" 
+                             aria-describedby="emailHelp"
+                             name="phone" #phone="ngModel" number
+                             >
+                             <p *ngIf="phone.errors?.number" class="alert alert-danger mt-2"> رقم تليفون خاطئ</p>
                         </div>
                         <div class="col-sm-6">
-                                <label for="exampleInputNumber">المحافظة</label>                            
-                                 <select class="form-control"[(ngModel)]="client.city" >
+                                <label for="exampleInputNumber">المحافظة  <span class="require">*</span></label>                            
+                                 <select   [ngModelOptions]="{ updateOn: 'blur' }"  name="gov" #gov="ngModel" required class="form-control"[(ngModel)]="client.city" >
                                         <!--<option value="">اختـــر المدينـــة</option>-->
                                         <option value="51">اسوان</option>
                                         <option value="49">اسيوط</option>
@@ -71,15 +85,17 @@
                                         <option value="592">كفر صقر</option>
                                         <option value="507">منيا القمح</option>
                         
-                                </select>                        
+                                </select>    
+                                <p *ngIf="gov.errors?.required" class="alert alert-danger mt-2">هذا الحقل مطلوب</p>
+                    
                         </div>
                     </div>    
                 </div>
             </div>
 
                 <div class="form-group col-sm-12 pb-2">
-                    <label for="exampleInputEmail1"> نوع العمل </label>
-                    <select (change)="addcompany()" class="form-control" name="op"  [(ngModel)]="companyStatus">
+                    <label for="exampleInputEmail1"> نوع العمل  <span class="require">*</span></label>
+                    <select  (change)="addcompany()" class="form-control" name="op"  [(ngModel)]="companyStatus">
                         <option value="" >مشتري</option>
                         <option value="true" >بائع </option>
                     </select>
@@ -87,12 +103,29 @@
             <div class="company-details" *ngIf="!companyStatus == false">
                 <div class="row">
                     <div class="form-group col-sm-6 pb-2">
-                        <label for="companyName"> اسم الشركة </label> 
-                        <input type="text" class="form-control" [(ngModel)]="seller.CompanyName" id="companyName">
+                        <label for="companyName"> اسم الشركة  <span class="require">*</span></label> 
+                        <input type="text" class="form-control" 
+                        [(ngModel)]="seller.CompanyName" 
+                        id="companyName"
+                        name="companyName"
+                        #cname="ngModel"
+                        required
+                        [ngModelOptions]="{ updateOn: 'blur' }" 
+                        >
+                    <p *ngIf="cname.errors?.required" class="alert alert-danger mt-2">هذا الحقل مطلوب</p>
+                        
                     </div> 
                     <div class="form-group col-sm-6 pb-2">
                         <label for="companyAddress">  تليفون الشركة </label> 
-                        <input type="text" class="form-control" [(ngModel)]="seller.HomePhone" id="companyAddress">
+                        <input type="text" class="form-control"
+                         [(ngModel)]="seller.HomePhone" 
+                         id="companyAddress"
+                         name="cphone"
+                         #cphone="ngModel"
+                         required
+                         [ngModelOptions]="{ updateOn: 'blur' }" 
+                         >
+                         <p *ngIf="cphone.errors?.required" class="alert alert-danger mt-2">هذا الحقل مطلوب</p>
                     </div>
                     <div class="form-group col-sm-12 pb-2">
                         <label for="companyAddress">  عنوان الشركة </label> 
@@ -107,10 +140,12 @@
                  
                 <div class="buttons w-100 d-flex justify-content-between">
                     <button routerLink="../register"  class="btn text-center ml-2">للخلف</button>
-                    <button   class="btn  text-center"  (click)="registerseller11()">سجل</button>
+                    <button   class="btn btn-custom-gray text-center"  (click)="registerseller11()">سجل</button>
                 </div>  
             <!-- </form>       -->
             </div>
         <!--</form>-->
- 
- 
+             </div>
+        </div>
+    </div>
+</body>

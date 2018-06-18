@@ -14,7 +14,8 @@ cookieValue = '';
 public loading = false;
   constructor(private dataService : DataserviceService,private cookieService : CookieService) 
   {
-  
+   console.log(this.cookieService.check("access_token"));
+    
   }
 
   ngOnInit() {
@@ -28,7 +29,7 @@ public loading = false;
     a=>{
       this.loading = false;
       //access token assign it to what ever
-      this.cookieService.set( 'access_token', a.json().access_token);
+      this.cookieService.set( 'access_token', a.json().access_token,);
       console.log(a.json().access_token)
       alert("Welcome user");
     },
@@ -39,4 +40,13 @@ public loading = false;
   )
   }
 
+  // errorHandler(status){
+  //   if(status == true){
+  //     alert("valid")
+  //     this.bool = true
+  //   }else {
+  //     this.bool = false
+  //   }
+    
+  // }
 }

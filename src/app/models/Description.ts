@@ -3,7 +3,7 @@ export class Description {
     ProdId:number=2
     Length:number
     Size:number
-    PartNumber:string
+    PartNumber:string = ""
     MoreDetails:string
     ModelFlexibility:string
     YearOfProduct:string = new Date().getDate().toString()    
