@@ -4,6 +4,7 @@ import {DataserviceService} from '../dataservice.service';
 import { error } from 'protractor';
 import { CookieService } from 'ngx-cookie-service';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 user : login = new login()
 cookieValue = '';
 public loading = false;
-  constructor(private dataService : DataserviceService,private cookieService : CookieService) 
+  constructor(private dataService : DataserviceService,private cookieService : CookieService,private rote:Router) 
   {
    console.log(this.cookieService.check("access_token"));
     
@@ -24,7 +25,6 @@ public loading = false;
   }
   login()
   {
-    debugger;
   this.loading = true;  
   let body =  "username=" + this.user.username + "&password="+this.user.password+"&grant_type=password";
   this.dataService.login(body).subscribe(
@@ -32,8 +32,7 @@ public loading = false;
       this.loading = false;
       //access token assign it to what ever
       this.cookieService.set( 'access_token', a.json().access_token,30);//30 days
-      console.log(a.json().access_token)
-      alert("Welcome user");
+      window.location.href = '/';
     },
     error => {
       this.loading = false;

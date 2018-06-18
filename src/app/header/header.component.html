@@ -80,7 +80,8 @@
                         <div class="header_icons w-100">
                             <!-- Header icons -->
                             <div class="cart-icon d-flex justify-content-end align-items-center">
-                                <div ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                                <div *ngIf="user == '' " ngbDropdown role="group" aria-label="Button group with nested dropdown">
+
                                     <button class="btn btn-link pl-2 ml-2" ngbDropdownToggle>دخول <i class="fas fa-angle-down"></i></button>
                                     <div class="dropdown-menu animate-form unlogin-form p-2" ngbDropdownMenu>
                                         <form action="" class="text-center">
@@ -90,7 +91,16 @@
                                             <a routerLink="register" href="" class="x"> تسجيل عضوية جديده </a>
                                         </form>    
                                     </div>
+
+
+
                                 </div>   
+                               
+                                <div *ngIf="user != '' ">
+                                {{' ' +user+ ' '}}
+                                <button (click)='logout()'>تسجيل الخروج</button>
+                                </div>
+                                
 
                                 <div *ngIf="1 > 10"  ngbDropdown role="group" aria-label="Button group with nested dropdown">
                                         <button class="btn btn-link pl-2 ml-2" ngbDropdownToggle>Adel Sadek <i class="fas fa-angle-down"></i></button>
@@ -187,23 +197,31 @@
             <!-- List Items -->
              <ul class="d-flex"> 
                 <li class="nav-item px-2 active">
-                    <a routerLink="" class="nav-link" href="">الرئيسية <span class="sr-only">(current)</span></a>
+                    <a  routerLink="" class="nav-link" href="">الرئيسية <span class="sr-only">(current)</span></a>
                 </li>
+                <li *ngIf="type == 'Client'" class="nav-item px-2 active">
+                        <a  routerLink="profile" class="nav-link" href="">صفحتى الشخصية <span class="sr-only">(current)</span></a>
+                    </li>
                 <li class="nav-item px-2">
                     <a routerLink="spareparts" class="nav-link" href=""> قطع غيار وأكسسورات</a>
                 </li>
                 <li class="nav-item px-2">
                     <a routerLink="shop" class="nav-link" href="">محلات</a>
                 </li>
-                <li class="nav-item px-2">
-                    <a routerLink="needproduct" class="nav-link">طلب قطعة غيار</a>
+                <li *ngIf="type == 'Client'" class="nav-item px-2">
+                    <a  routerLink="needproduct" class="nav-link">طلب قطعة غيار</a>
                 </li>
-                <li class="nav-item px-2">
-<<<<<<< HEAD
-                    <a routerLink="wrong" class="nav-link" href="#">جهاز كشف الاعطال</a>
-=======
-                    <a routerLink="wrong" class="nav-link" href="#">كشف الاعطال</a>
->>>>>>> 0a712eb4716a98065ea03148ec68a20017c2a6c6
+                <li *ngIf="type == 'Client'" class="nav-item px-2">
+                    <a  routerLink="wrong" class="nav-link" href="#">كشف الاعطال</a>
+                </li>
+                <li *ngIf="type == 'Seller'" class="nav-item px-2">
+                        <a  routerLink="sellerPage" class="nav-link">عرض قطع غيار البيع</a>
+                </li>
+                <li *ngIf="type == 'Seller'" class="nav-item px-2">
+                        <a  routerLink="orders" class="nav-link">رؤية طلبات العملاء</a>
+                </li>
+                <li *ngIf="type == 'Client'" class="nav-item px-2">
+                        <a  routerLink="userorders" class="nav-link">رؤية طلباتى</a>
                 </li>
                 <li class="nav-item px-2">
                     <a routerLink="advice" class="nav-link" href="#">نصائح</a>

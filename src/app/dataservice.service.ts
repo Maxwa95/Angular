@@ -200,6 +200,15 @@ Needproduct(access_token : string,NeededProducts : NeededProducts,file:File)
   formData.append('Image', file, file.name);
   return this.http.post("http://gearapi.azurewebsites.net/api/need",formData,options)
 }
+
+DeleteNeedproduct(access_token : string,id : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  let options = new RequestOptions({ headers: headers });
+  return this.http.delete(`http://gearapi.azurewebsites.net/api/need/${id}`,options)
+}
+
 confirmOrder(access_token : string,cout:checkout)
     {
       let headers = new Headers();
@@ -221,7 +230,7 @@ return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,o
       let headers = new Headers();
       headers.append('Authorization','Bearer '+access_token);
       let options = new RequestOptions({ headers: headers });
-      return this.http.post("http://gearapi.azurewebsites.net/api/Account/Logout",{},options)
+      return this.http.post("http://gearapi.azurewebsites.net/api/Account/Logout",{},options).toPromise()
     }
     ChangePassword(access_token : string,changepass : ChangePasswordBindingModel)
     {
@@ -251,8 +260,11 @@ return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,o
     let options = new RequestOptions({ headers: headers });
     return this.http.get(`http://gearapi.azurewebsites.net/api/neededproductforclient`,options)
    }
-
+   GetUserName(access_token : string)
+   {
+    let headers = new Headers();
+    headers.append('Authorization','Bearer '+access_token);
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get(`http://gearapi.azurewebsites.net/api/AccountInfo`,options).toPromise()
+   }
 }
-
-
-

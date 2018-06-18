@@ -13,28 +13,15 @@
     background-repeat: repeat;
     height: 100%;
     .x{
-<<<<<<< HEAD
-        background-color: rgba($color: #fff, $alpha: .90);
-            transition:all .3s ease-in-out;
-            box-shadow: 0px 0px 20px 3px lightgrey;
-=======
         background-color: rgba($color: #fff, $alpha: .70);
         transition:all .3s ease-in-out;
         box-shadow: 0px 0px 20px 3px lightgrey;
         padding-left: 50px;
         padding-right: 50px;
->>>>>>> 680ca9c8a789a03000a9b44e27c48613b228c6f3
         .form-group{
             label{
                 color: #343a40;  
             }
-<<<<<<< HEAD
-            input , textarea , select{
-                background-color: #f7f7f7;
-                }
-        }//form-group
-    }//x
-=======
             input , textarea{
                 background-color: #f7f7f7;
             }
@@ -47,5 +34,4 @@
             
             }//form-group
     }//form
->>>>>>> 680ca9c8a789a03000a9b44e27c48613b228c6f3
 }//needSpare

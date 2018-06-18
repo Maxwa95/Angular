@@ -4,6 +4,7 @@ import { DataserviceService } from '../dataservice.service'
 import {search} from '../models/search'
 import { Router } from '@angular/router';
 import { cart } from '../models/cart';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -19,14 +20,59 @@ export class HeaderComponent implements OnInit {
   searchResult=[];
   allCarts:cart[] = [];
   public search = new search();
-  constructor(private http:DataserviceService, private url:Router) { 
+  user : string = ''
+  type : string = ''
+  constructor(private http:DataserviceService, private url:Router,private c:CookieService) { 
   this.search.catsmatch=[]; 
   this.search.productsmatch=[""];
   this.allCarts =  JSON.parse(localStorage.getItem('cart')) || [];
+  this.http.GetUserName(this.c.get('access_token')).then(
+a=>{
+this.user = ' مرحبا ' + a.json().name 
+
 }
+  ).catch(
+e=>
+ this.user = ''
+  )
+
+
+  this.http.Getusergrants(this.c.get('access_token')).then(
+a=> {  this.type = a.json().Type  }
+
+  ).catch(
+    e=>{
+    this.http.Getclientgrants(this.c.get('access_token')).then(
+    a=>  this.type = a.json().Type
+
+    ).catch()
+
+    e=> this.type = ''
+  
+  
+    }
+
+
+
+
+  )
+    
+  }
 
 ngOnInit() {
     console.log(this.keywords);  
+  }
+  logout()
+  {
+this.http.Logout(this.c.get('access_token')).then(
+a=>{
+this.user = '';
+this.c.delete('access_token')
+location.reload()
+}
+
+)
+
   }
 
 

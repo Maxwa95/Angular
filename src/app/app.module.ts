@@ -51,6 +51,7 @@ import { AccountSettingComponent } from './the-seller/account-setting/account-se
 import { CustomFormsModule } from 'ng4-validators';
 import { OrdersComponent } from './the-seller/orders/orders.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { UserOrdersComponent } from './userorders/userorders.component';
 const appRoutes = [
   { path: "", component: HomeComponent},
   { path: "register", component: RegisterComponent},
@@ -64,7 +65,11 @@ const appRoutes = [
   { path:"profil-shop",component: ProfilShopComponent},
   { path:"spareparts",component: SparePartsComponent},
   { path:"single",component: SingleProductComponent},
-  { path:"profile",component: ProfileComponent},
+  { path:"profile",component: ProfileComponent
+  ,
+  canActivate: [ClientService]
+
+},
   { path:"shop",component: ShopComponent},
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
@@ -74,6 +79,10 @@ const appRoutes = [
   {path: 'test', component: TestComponent},
   {path: 'orders', component: OrdersComponent,
   canActivate: [SellerService]
+},
+
+  {path: 'userorders', component: UserOrdersComponent,
+  canActivate: [ClientService]
 },
   {path: 'settings', component: AccountSettingComponent},
   // canActivate: [ClientService] },
@@ -168,7 +177,8 @@ const appRoutes = [
     OrdersComponent,
     TestComponent,
     AccountSettingComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    UserOrdersComponent
 
   ],
   imports: [

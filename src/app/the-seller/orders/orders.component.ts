@@ -46,7 +46,6 @@ this.data.GetOrders(this.cookie.get('access_token')).subscribe(
 {
 
 this.data.GetOrderbyid(this.cookie.get('access_token'),this.itemtoshow.NeededProductsId).subscribe(
-
   a=>{
    alert('Approved');
   }
