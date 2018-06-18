@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Cart } from '../cart.service'
 import { cart } from '../models/cart';
 import { product } from '../models/product';
+import { checkout } from '../models/checkout';
+import { DataserviceService } from '../dataservice.service';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -10,9 +13,10 @@ import { product } from '../models/product';
 export class CartComponent implements OnInit {
   allCarts:cart[] = [];
   allCartsdata:cart[] = [];
+  chkout : checkout = new checkout()
   public loading = false;
   
-  constructor(private cart : Cart) {
+  constructor(private cart : Cart,private data:DataserviceService,private cookie:CookieService) {
        this.cart.cart.subscribe(a=>this.allCarts = a);
      console.log(this.allCarts);
    }
@@ -33,6 +37,7 @@ ngOnInit() {
         this.loading = false        
       }
     )
+    this.chkout = this.cart.checkout()
   }
   edititem(pro : cart){
     this.loading = true
@@ -48,5 +53,17 @@ ngOnInit() {
         this.loading = false
       }
     )
+    this.chkout = this.cart.checkout()
   }
+
+  confirmOrder(){
+this.data.confirmOrder(this.cookie.get("access_token"),this.cart.checkout()).subscribe(
+
+  a=>{alert("Check out done")}
+  ,
+  e=>{alert("Failed")}
+)
+    
+  }
+
 }

@@ -6,7 +6,7 @@ import{seller} from'../../models/seller'
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
-  styleUrls: ['./step1.component.scss']
+  styleUrls: ['./step1.component.scss', '../../../assets/scss/general.scss']
 })
 export class Step1Component implements OnInit {
 public client=new Client();

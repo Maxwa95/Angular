@@ -10,7 +10,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
 
   <!-- Tiny Slider  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.1/tiny-slider.css">
@@ -19,6 +18,18 @@
 
 
 </head>
+<script>
+    var slider = tns({
+      container: '#my-slider',
+      items: 3,
+      slideBy: 'page',
+      autoplay: true
+    });
+    
+    // NOTE: 
+    // prior to v2.0.2, options "container", "controlsContainer", "navContainer" and "autoplayButton" still need to be DOM elements.
+    // e.g. container: document.querySelector('.my-slider'),
+  </script>
 <body>
   <app-root></app-root>
 </body>

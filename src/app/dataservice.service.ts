@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http';
 import { Observable, of,BehaviorSubject } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';
 import { Client } from './models/client';
 import { seller } from './models/seller';
 import { login } from './models/login';
 import { ProductInfo } from './models/ProductInfo';
 import { productdesc } from './models/productdesc';
+<<<<<<< HEAD
+import { NeededProducts } from './models/NeededProducts';
+import { checkout  } from "./models/checkout";
+=======
+// import { JwtHelperService } from '@auth0/angular-jwt';
+import { CookieService } from 'ngx-cookie-service';
 
+>>>>>>> e51a507a023271bcab8a30abbfc7e4e55558e08c
 @Injectable({
   providedIn: 'root'
 })
 
 export class DataserviceService {
 
-  carts = ''
+  carts = '';
 
-  constructor(private http : Http) { }
+  constructor(private http : Http, private cookieService : CookieService) { }
+  
+
   // get single prod
   getsingleprod(id:string){
     return this.http.get('http://gearapi.azurewebsites.net/api/singleproduct/'+id)
@@ -61,16 +71,18 @@ searchByKey(key){
   }
 
   login(data:string){
-  //  let headers = new Headers();
-  //  headers.append('Content-type','application/x-www-form-urlencoded'); 
-    return this.http.post('http://gearapi.azurewebsites.net/token',data/*,{
+    
+    let headers = new Headers();
+    headers.append('Content-type','application/x-www-form-urlencoded'); 
+    return this.http.post('http://gearapi.azurewebsites.net/token',data,{
       headers: headers
-    }*/);
+    });
   }
 
   
   //  Add To Cart Functions
   setCart(item){
+    this.http.get("/").toPromise()
     this.carts = item
   }
 
@@ -128,19 +140,63 @@ AddProduct(pro:productdesc,access_token : string)
 }
 EditProduct(pro:productdesc,access_token : string)
 {
+  
      let headers = new Headers();
    headers.append('Authorization','Bearer '+access_token);
    headers.append('Content-type','application/json');
   return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
 }
 
+DeleteProduct(pro:number,access_token : string)
+{
+     let headers = new Headers();
+   headers.append('Authorization','Bearer '+access_token);
+  return this.http.delete(`http://gearapi.azurewebsites.net/api/seller/product/${pro}`,{headers:headers});
+}
+
 Getusergrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
-  return this.http.get('http://gearapi.azurewebsites.net/api/account/whoami',{headers:headers});
+  return this.http.get('http://gearapi.azurewebsites.net/api/whoami',{headers:headers}).toPromise()
 }
 
+Getclientgrants(access_token : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  return this.http.get('http://gearapi.azurewebsites.net/api/whoami/client',{headers:headers}).toPromise()
 }
+
+
+Getproducts(access_token : string)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  return this.http.get('http://gearapi.azurewebsites.net/api/seller/GetProducts',{headers:headers}).toPromise();
+}
+
+Needproduct(access_token : string,NeededProducts : NeededProducts,file:File)
+{
+  let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  let formData: FormData = new FormData()  
+  let options = new RequestOptions({ headers: headers });
+  formData.append("FullName", NeededProducts.FullName);
+  formData.append("TextResponce", NeededProducts.TextResponce);
+  formData.append('Image', file, file.name);
+  return this.http.post("http://gearapi.azurewebsites.net/api/need",formData,options)
+}
+confirmOrder(access_token : string,cout:checkout)
+    {
+      let headers = new Headers();
+  headers.append('Authorization','Bearer '+access_token);
+  let options = new RequestOptions({ headers: headers });
+return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,options)
+
+    }
+
+}
+
 
 

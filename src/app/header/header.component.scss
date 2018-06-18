@@ -207,6 +207,20 @@ header {
     font-size: 14px;
 }
 
+.login-form, .unlogin-form {
+    width: 200px;
+    li {
+        cursor: pointer;
+        transition: all .5s;
+        &:hover {
+            background: #e8ebee;
+        }
+        a {
+            text-decoration: none
+        }
+    }
+}
+
 @keyframes zoom{
     from{
         transform:scale(0);
