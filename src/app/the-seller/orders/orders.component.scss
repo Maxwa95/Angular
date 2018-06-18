@@ -20,7 +20,7 @@
         div{
             .card{
                 border: none;
-                border-bottom: 2px solid #1e88e5;
+                border-bottom: 2px solid #50c1e9;
                 border-radius: 0px;
                 .card-body{
                     .row{
@@ -35,13 +35,13 @@
                                     div{
                                         .iconz{
                                             margin-right: 10px;
-                                            color: #1e88e5;
+                                            color: #50c1e9;
                                         }
                                     }
                                     div{
                                         .icony{
                                             margin-left: 20px;
-                                            color: #1e88e5;
+                                            color: #50c1e9;
 
                                         }
                                     }
@@ -70,25 +70,25 @@
             hr{
                 width: 80px;
                 margin-right: 1px;
-                border:1px solid #1e88e5;
+                border:1px solid #50c1e9;
             }
         }
         div{
             .buttonAdd{
-                background-color: #1e88e5;
+                background-color: #50c1e9;
                 color: white;
                 border-radius: 5px;
-                border: 1px solid #1e88e5;
+                border: 1px solid #50c1e9;
                 padding: 7px 15px ;
             }
         }
         div{
             .edit{
-                border: 1px solid #1e88e5;
-                background-color: #1e88e5;
+                border: 1px solid #50c1e9;
+                background-color: #50c1e9;
                 color: white;
                 border-radius: 5px;
-                border: 1px solid #1e88e5;
+                border: 1px solid #50c1e9;
                 padding: 7px 15px ;
             }
             .remove{
@@ -145,23 +145,24 @@
     list-style-type: none;
     border: 1px solid lightgray;
     padding: 0;
+    background-color: white;
     li {
 
         padding: 20px;
-        border-bottom: 1px solid lightgray;
+        //border-bottom: 1px solid lightgray;
         text-align: center
         
     }
 
     li:hover {
         cursor: pointer;
-        background-color: #1E88E5;
+        background-color: #47b0d6;
         color: white;
     }
 
 
     .active {
-        background-color: #1E88E5;
+        background-color: #50c1e9;
         color: white;
 
 

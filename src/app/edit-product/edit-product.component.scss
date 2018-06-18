@@ -33,7 +33,7 @@ color: #343a40;
 }
 
 input , textarea , select{
-background-color: #f7f7f7;
+// background-color: #f7f7f7;
 }
 
 .upload-btn-wrapper {
@@ -75,4 +75,8 @@ height: 250px;
 
 .fa-check-circle {
     font-size: 80px
+}
+.btn-primary {
+    background-color: #50c1e9;
+    border: none;
 }

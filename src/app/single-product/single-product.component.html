@@ -134,7 +134,8 @@
         </div>
 
         <div class="container">
-            <h6> التعليقات </h6>
+            <h5> التعليقات </h5>
+            <hr class="mb-4 x">
             <div class="row">
                 <div class="col-sm-1 ">
                     <img class="img-thumbnail" src="http://placehold.it/50x50" alt="">
@@ -147,10 +148,9 @@
                       
                         <span class="text-primary">
                             
-                            <p class="w-50"> Add Comment : <input type="text" [(ngModel)]="fb.Comment"/>  </p>
-                             <button (click)="submitcomment()">
-                                 Add comment
-                             </button>
+                            <p class="w-50"> <textarea type="text" placeholder="أضف تعليق" [(ngModel)]="fb.Comment"></textarea>  </p>
+                            <button type="submit" class="btn btn-primary text-center" (click)="submitcomment()">حفظ</button>
+
                         </span>
                     </div>
                     <hr>
