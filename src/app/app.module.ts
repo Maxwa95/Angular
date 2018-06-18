@@ -68,7 +68,9 @@ const appRoutes = [
   { path:"search/:name",component: SparePartsComponent},
   { path:"cart",component: CartComponent},
   {path: 'Addproduct', component: AddProductComponent},
-
+  {path: 'test', component: TestComponent},
+  {path: 'orders', component: OrdersComponent},
+  {path: 'settings', component: AccountSettingComponent},
   // canActivate: [ClientService] },
 
 
