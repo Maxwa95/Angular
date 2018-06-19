@@ -4,6 +4,7 @@ import { DataserviceService } from '../dataservice.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-need-product',
   templateUrl: './need-product.component.html',
@@ -14,7 +15,7 @@ export class NeedProductComponent implements OnInit {
   file : File ;
   modalRef: BsModalRef;
 
-  constructor(public data : DataserviceService,public cookie:CookieService , private modalService: BsModalService) { }
+  constructor(public data : DataserviceService,public cookie:CookieService , private modalService: BsModalService,private rt : Router) { }
 
   ngOnInit() {
   }
@@ -34,7 +35,7 @@ export class NeedProductComponent implements OnInit {
     console.log(this.NeedProduct)
     this.data.Needproduct(this.cookie.get("access_token"),this.NeedProduct,this.file).subscribe(
       a=>{
-        // alert("done")
+this.rt.navigate(['/userorders'])
       }
       ,
       err=>{

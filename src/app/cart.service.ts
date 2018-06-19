@@ -19,8 +19,9 @@ export class Cart {
         }else{
             this.carts[this.carts.indexOf(cart)].quantity +=1;
        }
-       this.bs.next(this.carts)
        localStorage.setItem("cart",JSON.stringify(this.carts))
+       this.cart = JSON.parse(localStorage.getItem('cart'))
+       this.bs.next(this.carts)
       
     }
 
@@ -32,8 +33,8 @@ export class Cart {
             }else
             this.carts[this.carts.indexOf(cart)].quantity -=1;
              }
-        this.bs.next(this.carts)
-        localStorage.setItem("cart",JSON.stringify(this.carts))
+             localStorage.setItem("cart",JSON.stringify(this.carts))
+             this.bs.next(this.carts)
     }
     editcart(cart: cart) {
        
@@ -41,8 +42,8 @@ export class Cart {
         {
             this.carts[this.carts.indexOf(cart)] = cart;
         }
-        this.bs.next(this.carts)
         localStorage.setItem("cart",JSON.stringify(this.carts))
+        this.bs.next(this.carts)
     }
 
     checkout()

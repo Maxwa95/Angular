@@ -86,11 +86,7 @@ const appRoutes = [
 },
   {path: 'settings', component: AccountSettingComponent},
   // canActivate: [ClientService] },
-  {
-    path: 'Addproduct',
-    component: AddProductComponent
-    // ,canActivate: [SellerService]
-  },
+ 
   { 
     path: 'addproduct',
     component: AddProductComponent,

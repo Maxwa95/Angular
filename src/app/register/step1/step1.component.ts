@@ -3,6 +3,7 @@ import{FormsService} from '../../forms.service'
 import{Client} from'../../models/client'
 import {DataserviceService} from '../../dataservice.service';
 import{seller} from'../../models/seller'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
@@ -12,7 +13,7 @@ export class Step1Component implements OnInit {
 public client=new Client();
 public seller:seller=new seller();
 companyStatus:Boolean=false;
-  constructor(private form: FormsService,private dataService : DataserviceService) { 
+  constructor(private form: FormsService,private dataService : DataserviceService, private route:Router) { 
     this.form.clientform.subscribe(a=>this.client=a);
   }
 
@@ -21,11 +22,13 @@ companyStatus:Boolean=false;
 
     }
   }
-  
   register(){
     this.dataService.registerclient(this.client).subscribe(
 
-      null,error=>alert(error)
+      a=>{
+this.route.navigate(["/login"])
+
+      },error=>alert(error)
     );
 
    };
@@ -48,7 +51,10 @@ companyStatus:Boolean=false;
    registerseller11():void{
     if(this.companyStatus == false){
       this.dataService.registerclient(this.client).subscribe(
-               null,
+        a=>{
+          this.route.navigate(["/login"])
+        }
+                 ,
                error=>alert(error),
                null
        ) }

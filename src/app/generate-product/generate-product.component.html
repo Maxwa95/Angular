@@ -34,11 +34,11 @@
 
 
           <div class="col-12">
-            <form class="p-4" >
+ 
                 <div class="form-row mb-3">
                   <div class="form-group col-md-12 text-right">
                     <label for="inputEmail4">اسم القطعة</label>
-                    <input type="email" class="form-control text-right">
+                    <input type="text" class="form-control text-right">
                   </div>
                 </div>
     
@@ -50,8 +50,8 @@
                   <div class="form-group col-md-6 text-right">
                       <label for="inputAddress">التصنيف</label>
                       <select id="inputState" class="form-control">
-                        <option selected></option>
-                        <option>...</option>
+                        <option *ngFor="let item of cates" value="{{item.CategoriesId}}">{{item.CategoriesName}}</option>
+                        
                       </select>
                     </div>
                   </div> 
@@ -60,15 +60,15 @@
                     <div class="form-group col-md-6  text-right ">
                       <label for="inputState">الموديل</label>
                       <select id="inputState" class="form-control">
-                          <option selected></option>
-                          <option>...</option>
+                          <option *ngFor="let item of models" value="{{item.ModelId}}">{{item.ModelName}}</option>
+                          
                         </select>
                       </div>
                       <div class="form-group col-md-6 text-right">
                         <label for="inputState">الماركة</label>
                         <select id="inputState" class="form-control">
-                          <option selected></option>
-                          <option>...</option>
+                          <option *ngFor="let item of brands" value="{{item.BrandId}}">{{item.BrandName}}</option>
+                        
                         </select>
                       </div>
                     </div>
@@ -82,8 +82,8 @@
                            <label for="inputAddress">حالة المنتج</label>
                            <select id="inputState" class="form-control">
                                <option selected></option>
-                               <option>جديد</option>
-                               <option>مستعمل</option>
+                               <option>NEW</option>
+                               <option>USED</option>
                              </select>
                         </div>
                       </div>
@@ -91,7 +91,7 @@
                       <div class="form-row mb-3">     
                          <div class="form-group col-md-6 text-right">
                            <label for="inputPassword4"> تاريخ التصنيع</label>
-                           <input type="number" class="form-control text-right">
+                           <input type="date" class="form-control text-right">
                          </div>
                          <div class="form-group col-md-6 text-right">
                              <label for="inputAddress">توافق </label>
@@ -175,11 +175,10 @@
 
     
                 
-                <button type="submit" class="btn btn-primary text-center mr-3">حفظ</button>
+                <button class="btn btn-primary text-center mr-3">حفظ</button>
                 <button type="submit" class="btn btn-secondary text-center">رجوع</button>
 
 
-              </form>
         </div>
         </div>
       </div>

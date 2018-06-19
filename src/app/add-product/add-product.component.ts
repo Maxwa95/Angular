@@ -36,7 +36,6 @@ export class AddProductComponent implements OnInit {
     )
 
   }
-
   fileUpload(event){
     this.imgs= event;
     console.log(this.imgs.length)

@@ -35,7 +35,7 @@
     "ng2-nouislider": "^1.7.11",
     "ng2-search-filter": "^0.4.7",
     "ng4-validators": "^6.0.0",
-    "ngx-bootstrap": "^3.0.0",
+    "ngx-bootstrap": "^3.0.1",
     "ngx-cookie-service": "^1.0.10",
     "ngx-loading": "^1.0.14",
     "ngx-slick": "^0.1.3",

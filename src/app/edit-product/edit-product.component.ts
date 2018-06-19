@@ -28,7 +28,6 @@ export class EditProductComponent implements OnInit {
         this.products = res.json()
         console.log(this.products);
         console.log(this.products.Description[0].PartNumber);
-        
       },
       (error) => {
       }
@@ -67,22 +66,31 @@ export class EditProductComponent implements OnInit {
 
   }
 
+  edit(
+  )
+  {
+
+
+    this.http.EditProduct(this.products,this.cookieService.get('access_token')).subscribe(
+      a=>{
+        alert('done')
+      },
+      e=>{
+    
+      }
+    
+        )
+  }
+/*
   open(content) {
     
     this.modalService.open(content).result.then((result) => {
-      this.http.EditProduct(this.products,this.cookieService.get('access_token')).subscribe(
-        a=>{
-          alert('done')
-        },
-        e=>{
+      alert('hello')
       
-        }
-      
-          )
       // this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-  }
+  }*/
 
 }

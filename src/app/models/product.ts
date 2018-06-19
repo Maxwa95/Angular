@@ -11,7 +11,7 @@ export class product{
  DateOfPublish:Date= new Date(1111)
  Price:number
  Discount:number
- Quantity:number
+ Quantity:number = 0
  Rate:number = 0
  Description:Description
  bra:brand

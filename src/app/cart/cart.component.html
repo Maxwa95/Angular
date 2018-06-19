@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 p-0">
-                                    <button (click)="confirmOrder()" type="button" class="btn btn-primary btn-lg btn-block">  تابع عملية الشراء</button>
+                                    <button (click)="openModal(template)" type="button" class="btn btn-primary btn-lg btn-block">  تابع عملية الشراء</button>
                                 </div>
                             </div>
                         </div>
@@ -95,3 +95,53 @@
                  <h6 class="py-5"> عربة التسوق فارغة  <a href=""> تسوق الان </a></h6>
              </div>
     </section>
+
+    
+
+     
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">هل انت متأكد من القيام بعملية الشراء ؟</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        
+        <button type="button" class="btn btn-primary"  (click)="confirmOrder(templateNested)">نعم</button>
+    </div>
+</ng-template>
+
+<ng-template #templateNested>
+    <div class="modal-header d-flex justify-content-end">
+        <h4 class="mr-3 pr-3">تم اتمام الطلب بنجاح</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeMoldels()"> 
+                   <span aria-hidden="true">&times;</span> </button>
+
+      </div>
+      
+    </ng-template>
+
+
+    <!--
+    <ng-template #template>
+        <div class="modal-header"­>
+        <h4 class="modal-title pull-left">هل انت متأكد من تأكيد عملية الشراء ؟ </h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)">نعم !</button>
+        </div>
+        </ng-template>
+        
+        <ng-template #templateNested>
+        <div class="modal-header border-0">
+        <h4 class="modal-title pull-left">تم إضافة المنتج الى العربة بنجاح </h4>
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        
+        </ng-template>
+        -->
