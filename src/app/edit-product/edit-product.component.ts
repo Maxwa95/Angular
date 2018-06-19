@@ -68,7 +68,17 @@ export class EditProductComponent implements OnInit {
   }
 
   open(content) {
+    
     this.modalService.open(content).result.then((result) => {
+      this.http.EditProduct(this.products,this.cookieService.get('access_token')).subscribe(
+        a=>{
+          alert('done')
+        },
+        e=>{
+      
+        }
+      
+          )
       // this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

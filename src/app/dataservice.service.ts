@@ -28,53 +28,53 @@ export class DataserviceService {
 
   // get single prod
   getsingleprod(id:string){
-    return this.http.get('http://gearapi.azurewebsites.net/api/singleproduct/'+id)
+    return this.http.get('http://localhost:2377/api/singleproduct/'+id)
   }
     
   //getfilterbybrandandcategory
   getfilter(){
-    return this.http.get('http://gearapi.azurewebsites.net/api/getfilterdata')
+    return this.http.get('http://localhost:2377/api/getfilterdata')
   }
 
 // Search
 searchByKey(key){
-  return this.http.get(`http://gearapi.azurewebsites.net/api/search/${key}`)
+  return this.http.get(`http://localhost:2377/api/search/${key}`)
 }
 
   //  Get Top Selling Products
   get_top_selling_products(){
-    return this.http.get('http://gearapi.azurewebsites.net/api/ClientProducts');
+    return this.http.get('http://localhost:2377/api/ClientProducts');
   }
 
   productsPaging(num : number){
-    return this.http.get('http://gearapi.azurewebsites.net/api/clientproducts/byname?pagenum='+num);
+    return this.http.get('http://localhost:2377/api/clientproducts/byname?pagenum='+num);
   }
 
   //  Get Recent Products
   recentProducts(){
-    return this.http.get('http://gearapi.azurewebsites.net/api/clientProducts/last');
+    return this.http.get('http://localhost:2377/api/clientProducts/last');
   }
 
 // best offers
   bestOffers(){
-    return this.http.get('http://gearapi.azurewebsites.net/api/clientProducts/offers')
+    return this.http.get('http://localhost:2377/api/clientProducts/offers')
   }
 
   registerclient(data:Client){
     let headers = new Headers();
     headers.append('Content-type','application/x-www-form-urlencoded'); 
     
-    return this.http.post('http://gearapi.azurewebsites.net/api/Account/Register',data);
+    return this.http.post('http://localhost:2377/api/Account/Register',data);
   }
   registerseller(data:seller){
-    return this.http.post('http://gearapi.azurewebsites.net/api/Account/RegisterSeller',data);
+    return this.http.post('http://localhost:2377/api/Account/RegisterSeller',data);
   }
 
   login(data:string){
     
     let headers = new Headers();
     headers.append('Content-type','application/x-www-form-urlencoded'); 
-    return this.http.post('http://gearapi.azurewebsites.net/token',data,{
+    return this.http.post('http://localhost:2377/token',data,{
       headers: headers
     });
   }
@@ -94,7 +94,7 @@ searchByKey(key){
   //  Filter Function
 
   filterSearchByName(pnum:number=1, pname:string='*'){
-    return this.http.get('http://gearapi.azurewebsites.net/api/ClientProducts/byname?pagenum='+pnum+'&name='+pname)
+    return this.http.get('http://localhost:2377/api/ClientProducts/byname?pagenum='+pnum+'&name='+pname)
   }
 
   filterByBrandAndCat(pnum:number=1, cname, bname,state:string='*',min=0,max=0){
@@ -108,27 +108,27 @@ searchByKey(key){
     }else{
       bname = bname.join(",");
     }
-    return this.http.get('http://gearapi.azurewebsites.net/api/filterclientproducts?pagenum='+pnum+'&catename='+cname+'&brandsname='+bname+'&status='+state+'&low='+min+'&high='+max)
+    return this.http.get('http://localhost:2377/api/filterclientproducts?pagenum='+pnum+'&catename='+cname+'&brandsname='+bname+'&status='+state+'&low='+min+'&high='+max)
   }
   //selller infos
 profileCompany(compid:number){
-  return this.http.get('http://gearapi.azurewebsites.net/api/Seller/'+compid);
+  return this.http.get('http://localhost:2377/api/Seller/'+compid);
 }
 productsPerCompany(compid:number){
-  return this.http.get('http://gearapi.azurewebsites.net/api/Seller/GetProducts/'+compid);
+  return this.http.get('http://localhost:2377/api/Seller/GetProducts/'+compid);
 }
 GetBrands()
 {
-  return this.http.get('http://gearapi.azurewebsites.net/api/Brands')
+  return this.http.get('http://localhost:2377/api/Brands')
 }
 
 GetCategories()
 {
-  return this.http.get('http://gearapi.azurewebsites.net/api/categories')
+  return this.http.get('http://localhost:2377/api/categories')
 }
 GetModels()
 {
-  return this.http.get('http://gearapi.azurewebsites.net/api/models')
+  return this.http.get('http://localhost:2377/api/models')
 }
 AddProduct(pro:productdesc,access_token : string)
 {
@@ -136,7 +136,7 @@ AddProduct(pro:productdesc,access_token : string)
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token); 
     headers.append('Content-type','application/json');
-  return this.http.post('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers}).toPromise();
+  return this.http.post('http://localhost:2377/api/seller/product',pro,{headers:headers}).toPromise();
 }
 AddImagestoProduct(access_token : string, imgs : File[],prodid : string)
 { 
@@ -149,7 +149,7 @@ AddImagestoProduct(access_token : string, imgs : File[],prodid : string)
    for (let index = 0; index < imgs.length; index++) {
     fd.append('imgs'+index,imgs[index], imgs[index].name)
    }
-  return this.http.post('http://gearapi.azurewebsites.net/api/seller/productImages',fd,options);
+  return this.http.post('http://localhost:2377/api/seller/productImages',fd,options);
 }
 EditProduct(pro:productdesc,access_token : string)
 {
@@ -157,28 +157,28 @@ EditProduct(pro:productdesc,access_token : string)
      let headers = new Headers();
    headers.append('Authorization','Bearer '+access_token);
    headers.append('Content-type','application/json');
-  return this.http.put('http://gearapi.azurewebsites.net/api/seller/product',pro,{headers:headers});
+  return this.http.put('http://localhost:2377/api/seller/product',pro,{headers:headers});
 }
 
 DeleteProduct(pro:number,access_token : string)
 {
      let headers = new Headers();
    headers.append('Authorization','Bearer '+access_token);
-  return this.http.delete(`http://gearapi.azurewebsites.net/api/seller/product/${pro}`,{headers:headers});
+  return this.http.delete(`http://localhost:2377/api/seller/product/${pro}`,{headers:headers});
 }
 
 Getusergrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
-  return this.http.get('http://gearapi.azurewebsites.net/api/whoami',{headers:headers}).toPromise()
+  return this.http.get('http://localhost:2377/api/whoami',{headers:headers}).toPromise()
 }
 
 Getclientgrants(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
-  return this.http.get('http://gearapi.azurewebsites.net/api/whoami/client',{headers:headers}).toPromise()
+  return this.http.get('http://localhost:2377/api/whoami/client',{headers:headers}).toPromise()
 }
 
 
@@ -186,7 +186,7 @@ Getproducts(access_token : string)
 {
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
-  return this.http.get('http://gearapi.azurewebsites.net/api/seller/GetProducts',{headers:headers}).toPromise();
+  return this.http.get('http://localhost:2377/api/seller/GetProducts',{headers:headers}).toPromise();
 }
 
 Needproduct(access_token : string,NeededProducts : NeededProducts,file:File)
@@ -198,7 +198,7 @@ Needproduct(access_token : string,NeededProducts : NeededProducts,file:File)
   formData.append("FullName", NeededProducts.FullName);
   formData.append("TextResponce", NeededProducts.TextResponce);
   formData.append('Image', file, file.name);
-  return this.http.post("http://gearapi.azurewebsites.net/api/need",formData,options)
+  return this.http.post("http://localhost:2377/api/need",formData,options)
 }
 
 DeleteNeedproduct(access_token : string,id : string)
@@ -206,7 +206,7 @@ DeleteNeedproduct(access_token : string,id : string)
   let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
   let options = new RequestOptions({ headers: headers });
-  return this.http.delete(`http://gearapi.azurewebsites.net/api/need/${id}`,options)
+  return this.http.delete(`http://localhost:2377/api/need/${id}`,options)
 }
 
 confirmOrder(access_token : string,cout:checkout)
@@ -214,7 +214,7 @@ confirmOrder(access_token : string,cout:checkout)
       let headers = new Headers();
   headers.append('Authorization','Bearer '+access_token);
   let options = new RequestOptions({ headers: headers });
-return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,options)
+return this.http.post("http://localhost:2377/api/confirmorder",cout,options)
 
     }
     Addcomment(access_token : string,comment:feedback)
@@ -222,7 +222,7 @@ return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,o
       let headers = new Headers();
       headers.append('Authorization','Bearer '+access_token);
       let options = new RequestOptions({ headers: headers });
-      return this.http.post("http://gearapi.azurewebsites.net/api/Feedback",comment,options)
+      return this.http.post("http://localhost:2377/api/Feedback",comment,options)
     }
 
     Logout(access_token : string)
@@ -230,41 +230,41 @@ return this.http.post("http://gearapi.azurewebsites.net/api/confirmorder",cout,o
       let headers = new Headers();
       headers.append('Authorization','Bearer '+access_token);
       let options = new RequestOptions({ headers: headers });
-      return this.http.post("http://gearapi.azurewebsites.net/api/Account/Logout",{},options).toPromise()
+      return this.http.post("http://localhost:2377/api/Account/Logout",{},options).toPromise()
     }
     ChangePassword(access_token : string,changepass : ChangePasswordBindingModel)
     {
       let headers = new Headers();
       headers.append('Authorization','Bearer '+access_token);
       let options = new RequestOptions({ headers: headers });
-      return this.http.post("http://gearapi.azurewebsites.net/api/Account/ChangePassword",changepass,options)
+      return this.http.post("http://localhost:2377/api/Account/ChangePassword",changepass,options)
    }
    GetOrders(access_token : string)
    {
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token);
     let options = new RequestOptions({ headers: headers });
-    return this.http.get("http://gearapi.azurewebsites.net/api/needed",options)
+    return this.http.get("http://localhost:2377/api/needed",options)
    }
    GetOrderbyid(access_token : string,id : string)
    {
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token);
     let options = new RequestOptions({ headers: headers });
-    return this.http.get(`http://gearapi.azurewebsites.net/api/needed/${id}`,options)
+    return this.http.get(`http://localhost:2377/api/needed/${id}`,options)
    }
    ClientGetNeededProductsDetalis(access_token : string)
    {
      let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token);
     let options = new RequestOptions({ headers: headers });
-    return this.http.get(`http://gearapi.azurewebsites.net/api/neededproductforclient`,options)
+    return this.http.get(`http://localhost:2377/api/neededproductforclient`,options)
    }
    GetUserName(access_token : string)
    {
     let headers = new Headers();
     headers.append('Authorization','Bearer '+access_token);
     let options = new RequestOptions({ headers: headers });
-    return this.http.get(`http://gearapi.azurewebsites.net/api/AccountInfo`,options).toPromise()
+    return this.http.get(`http://localhost:2377/api/AccountInfo`,options).toPromise()
    }
 }
